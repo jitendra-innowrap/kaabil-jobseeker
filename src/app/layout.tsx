@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from 'next/font/google'
- 
+
 const inter = Inter({ subsets: ['latin'] })
 import localFont from "next/font/local";
 import "./globals.css";
+import Header from "@/components/Header";
 
 const WorkSans = localFont({
   src: "./fonts/WorkSans-VariableFont_wght.ttf",
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body
         className={`${WorkSans.variable} ${inter.className} antialiased`}
       >
+        <Header />
         {children}
       </body>
     </html>
