@@ -12,7 +12,7 @@ export default function Header() {
                 alt='kaabil logo'
                 />
         </div>
-        <div className="flex h-full border-l-[1px] border-black flex-col w-[-webkit-fill-available]">
+        <div className="hidden md:flex h-full border-l-[1px] border-black flex-col w-[-webkit-fill-available]">
             <div className="flex justify-between items-center py-2 pl-8 border-b-[1px] border-black pr-5 md:pr-10 2xl:pr-16">
                 <div className="flex gap-3 py-4">
                     <AiOutlineSearch  size={20} color='#959595' />
