@@ -1,3 +1,4 @@
+import PlayStoreAppAd from "@/components/Banners/PlaystoreAppAd";
 import Breadcrumb from "@/components/Breadcrumb";
 import Footer from "@/components/Footer";
 import CompanyAboutSection from "@/components/JobDetail/CompanyAboutSection";
@@ -12,7 +13,9 @@ import { MdAccessTime } from "react-icons/md";
 export default function Home() {
   return (
     <main className="">
-        <Breadcrumb />
+        <div className="container gap-1 flex-wrap flex items-center text-[#4d4d4f]">
+          <Breadcrumb root="Home" category="For Women" subCategory="Employer" subcategory2="Swiggy" subcategory3="Jobs" />
+        </div>
         <JobdetailBanner />
         <section className="container">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 mt-8 ">
@@ -89,19 +92,22 @@ export default function Home() {
                 Key Skills
                 Skills highlighted with ‘‘ are preferred keyskills
               </div>
-              <div className="flex flex-wrap mt-8 md:mt-16 md:mb-16  gap-2">
-                  <button className='py-2 px-4 xl:px-6 text-xs md:text-lg xl:text-xl rounded-3xl font-bold border-[1px] bg-white border-[#E41C3B] text-[#E41C3B]'>Register to Apply</button>
-                  <button className='py-2 px-4 xl:px-6 text-xs md:text-lg xl:text-xl rounded-3xl font-bold border-[1px] text-white border-[#E41C3B] bg-[#E41C3B]'>Login to Apply</button>
-                  <button className='py-2 px-4 xl:px-6 text-xs md:text-lg xl:text-xl rounded-3xl font-bold  bg-white border-[#E41C3B] text-[#E41C3B]'><GoShareAndroid className='inline'/> Share</button>
-                  <button className='py-2 px-4 xl:px-6 text-xs md:text-lg xl:text-xl rounded-3xl font-bold  bg-white border-[#E41C3B] text-[#E41C3B]'><IoHeartOutline className='inline'/> Save</button>
+              <div className="flex flex-wrap mt-8 md:mt-16 md:mb-16 gap-2">
+                  <button className='py-2 px-4 xl:px-6 text-xs md:text-lg xl:text-xl font-bold rounded-3xl border-[1px] bg-white border-[#E41C3B] text-[#E41C3B]'>Register to Apply</button>
+                  <button className='py-2 px-4 xl:px-6 text-xs md:text-lg xl:text-xl font-bold rounded-3xl border-[1px] text-white border-[#E41C3B] bg-[#E41C3B]'>Login to Apply</button>
+                  <div className="flex">
+                      <button className='py-2 px-4 xl:px-6 text-xs md:text-lg xl:text-xl font-bold rounded-3xl bg-white border-[#E41C3B] text-[#E41C3B]'>Follow</button>
+                      <button className='py-2 px-2 2xl:px-4 text-xs md:text-lg xl:text-xl font-bold rounded-3xl bg-white border-[#E41C3B] text-[#E41C3B]'><GoShareAndroid className='inline size-4 md:size-8'/> Share</button>
+                      <button className='py-2 px-2 2xl:px-4 text-xs md:text-lg xl:text-xl font-bold rounded-3xl bg-white border-[#E41C3B] text-[#E41C3B]'><IoHeartOutline className='inline size-4 md:size-7'/> Save</button>    
+                  </div>
               </div>
             </div>
             <div className="block">
               <strong className="block font-bold text-2xl py-5 md:py-6">
                 Explore Jobs from Swiggy
               </strong>
-              <div className="flex mt-4 gap-4 md:gap-7 flex-col">
-                <div className="border border-[#A7A7A7] rounded-[20px] w-[320px] md:w-[380px] px-5 md:px-8 py-4 md:py-7">
+              <div className="flex mt-4 mb-8 gap-4 md:gap-7 lg:flex-col overflow-auto">
+                <div className="border border-[#A7A7A7] rounded-[20px] min-w-[320px] md:min-w-[380px] px-5 md:px-8 py-4 md:py-7">
                   <strong className="font-bold text-lg md:text-xl mb-2 block">Store Floor Manager | Delhi</strong>
                   <p className="font-light text-base text-[#727272]">Posted by HR Services Limited</p>
                   <div className="flex flex-wrap gap-y-1 flex-row md:items-center mt-3 gap-x-1 md:gap-x-3 md:mt-3">
@@ -118,7 +124,7 @@ export default function Home() {
                     View Details
                   </button>
                 </div>
-                <div className="border border-[#A7A7A7] rounded-[20px] w-[320px] md:w-[380px] px-5 md:px-8 py-4 md:py-7">
+                <div className="border border-[#A7A7A7] rounded-[20px] min-w-[320px] md:min-w-[380px] px-5 md:px-8 py-4 md:py-7">
                   <strong className="font-bold text-lg md:text-xl mb-2 block">Store Floor Manager | Delhi</strong>
                   <p className="font-light text-base text-[#727272]">Posted by HR Services Limited</p>
                   <div className="flex flex-wrap gap-y-1 flex-row md:items-center mt-3 gap-x-1 md:gap-x-3 md:mt-3">
@@ -135,7 +141,7 @@ export default function Home() {
                     View Details
                   </button>
                 </div>
-                <div className="border border-[#A7A7A7] rounded-[20px] w-[320px] md:w-[380px] px-5 md:px-8 py-4 md:py-7">
+                <div className="border border-[#A7A7A7] rounded-[20px] min-w-[320px] md:min-w-[380px] px-5 md:px-8 py-4 md:py-7">
                   <strong className="font-bold text-lg md:text-xl mb-2 block">Store Floor Manager | Delhi</strong>
                   <p className="font-light text-base text-[#727272]">Posted by HR Services Limited</p>
                   <div className="flex flex-wrap gap-y-1 flex-row md:items-center mt-3 gap-x-1 md:gap-x-3 md:mt-3">
@@ -152,7 +158,7 @@ export default function Home() {
                     View Details
                   </button>
                 </div>
-                <div className="border border-[#A7A7A7] rounded-[20px] w-[320px] md:w-[380px] px-5 md:px-8 py-4 md:py-7">
+                <div className="border border-[#A7A7A7] rounded-[20px] min-w-[320px] md:min-w-[380px] px-5 md:px-8 py-4 md:py-7">
                   <strong className="font-bold text-lg md:text-xl mb-2 block">Store Floor Manager | Delhi</strong>
                   <p className="font-light text-base text-[#727272]">Posted by HR Services Limited</p>
                   <div className="flex flex-wrap gap-y-1 flex-row md:items-center mt-3 gap-x-1 md:gap-x-3 md:mt-3">
@@ -178,131 +184,49 @@ export default function Home() {
         <section className="container">
           <strong className="text-lg md:text-2xl font-bold block mt-10 lg:mt-20 mb-5 lg:mb-8">Explore Similar Jobs from Other Companies</strong>
           <div className="flex flex-col gap-4 md:gap-6">
-            <div className="border flex w-full max-w-[920px] border-[#A7A7A7] rounded-[20px] justify-between px-5 md:px-8 py-4 md:py-7">
+            <div className="border sm:flex w-full max-w-[920px] border-[#A7A7A7] rounded-[20px] justify-between px-3 sm:px-8 py-3 sm:py-7">
               <div className="block">
-                <strong className="font-bold text-lg md:text-xl mb-2 block">Store Floor Manager | Delhi</strong>
-                <p className="font-light text-base text-[#727272]">Posted by HR Services Limited</p>
-                <div className="flex flex-wrap gap-y-1 flex-row md:items-center mt-3 gap-x-1 md:gap-x-3 md:mt-3">
-                    <span className='opacity-80 flex items-center gap-1 md:gap-2 text-xs md:text-[14px]'><MdAccessTime className='inline size-3 md:size-5'/> Full Time</span> 
-                    <span className='opacity-80 flex items-center gap-1 md:gap-2 text-xs md:text-[14px]'><FiCamera className='inline size-3 md:size-5'/> 2-5 years of experience</span>
-                    <span className='opacity-80 flex items-center gap-1 md:gap-2 text-xs md:text-[14px]'><HiOutlineCurrencyRupee className='inline size-3 md:size-5'/> 3L-6 Lacs PA</span>
-                </div>
-                <div className="flex mt-4 flex-wrap opacity-80 gap-2 text-xs md:text-[14px]">
-                  <span>Store Manager</span>
-                  <span>Luxury Sales</span>
-                  <span>Sales Operation</span>
-                </div>
-              </div>
-              <div className="flex flex-col items-end">
                 <Image
-                  src={"/assets/logos/jio.png"}
-                  width={80}
-                  height={73}
-                  alt="company logo"
-                  className=""
-                  />
-                  <div className="flex gap-2 md:gap-3">
-                    <button className="font-bold text-xs md:text-sm py-2 mt-5 px-5 border-black border rounded-[20px]">
-                      Save
-                    </button>
-                    <button className="font-bold text-xs text-white bg-[#E41C3B] md:text-sm py-2 mt-5 px-5 border-[#E41C3B] border rounded-[20px]">
-                      Apply Now
-                    </button>
-                  </div>
-              </div>
-            </div>
-            <div className="border flex w-full max-w-[920px] border-[#A7A7A7] rounded-[20px] justify-between px-5 md:px-8 py-4 md:py-7">
-              <div className="block">
-                <strong className="font-bold text-lg md:text-xl mb-2 block">Store Floor Manager | Delhi</strong>
-                <p className="font-light text-base text-[#727272]">Posted by HR Services Limited</p>
-                <div className="flex flex-wrap gap-y-1 flex-row md:items-center mt-3 gap-x-1 md:gap-x-3 md:mt-3">
-                    <span className='opacity-80 flex items-center gap-1 md:gap-2 text-xs md:text-[14px]'><MdAccessTime className='inline size-3 md:size-5'/> Full Time</span> 
-                    <span className='opacity-80 flex items-center gap-1 md:gap-2 text-xs md:text-[14px]'><FiCamera className='inline size-3 md:size-5'/> 2-5 years of experience</span>
-                    <span className='opacity-80 flex items-center gap-1 md:gap-2 text-xs md:text-[14px]'><HiOutlineCurrencyRupee className='inline size-3 md:size-5'/> 3L-6 Lacs PA</span>
-                </div>
-                <div className="flex mt-4 flex-wrap opacity-80 gap-2 text-xs md:text-[14px]">
-                  <span>Store Manager</span>
-                  <span>Luxury Sales</span>
-                  <span>Sales Operation</span>
-                </div>
-              </div>
-              <div className="flex flex-col items-end">
-                <Image
-                  src={"/assets/logos/jio.png"}
-                  width={80}
-                  height={73}
-                  alt="company logo"
-                  className=""
-                  />
-                  <div className="flex gap-2 md:gap-3">
-                    <button className="font-bold text-xs md:text-sm py-2 mt-5 px-5 border-black border rounded-[20px]">
-                      Save
-                    </button>
-                    <button className="font-bold text-xs text-white bg-[#E41C3B] md:text-sm py-2 mt-5 px-5 border-[#E41C3B] border rounded-[20px]">
-                      Apply Now
-                    </button>
-                  </div>
-              </div>
-            </div>
-            <div className="border flex w-full max-w-[920px] border-[#A7A7A7] rounded-[20px] justify-between px-5 md:px-8 py-4 md:py-7">
-              <div className="block">
-                <strong className="font-bold text-lg md:text-xl mb-2 block">Store Floor Manager | Delhi</strong>
-                <p className="font-light text-base text-[#727272]">Posted by HR Services Limited</p>
-                <div className="flex flex-wrap gap-y-1 flex-row md:items-center mt-3 gap-x-1 md:gap-x-3 md:mt-3">
-                    <span className='opacity-80 flex items-center gap-1 md:gap-2 text-xs md:text-[14px]'><MdAccessTime className='inline size-3 md:size-5'/> Full Time</span> 
-                    <span className='opacity-80 flex items-center gap-1 md:gap-2 text-xs md:text-[14px]'><FiCamera className='inline size-3 md:size-5'/> 2-5 years of experience</span>
-                    <span className='opacity-80 flex items-center gap-1 md:gap-2 text-xs md:text-[14px]'><HiOutlineCurrencyRupee className='inline size-3 md:size-5'/> 3L-6 Lacs PA</span>
-                </div>
-                <div className="flex mt-4 flex-wrap opacity-80 gap-2 text-xs md:text-[14px]">
-                  <span>Store Manager</span>
-                  <span>Luxury Sales</span>
-                  <span>Sales Operation</span>
-                </div>
-              </div>
-              <div className="flex flex-col items-end">
-                <Image
-                  src={"/assets/logos/jio.png"}
-                  width={80}
-                  height={73}
-                  alt="company logo"
-                  className=""
-                  />
-                  <div className="flex gap-2 md:gap-3">
-                    <button className="font-bold text-xs md:text-sm py-2 mt-5 px-5 border-black border rounded-[20px]">
-                      Save
-                    </button>
-                    <button className="font-bold text-xs text-white bg-[#E41C3B] md:text-sm py-2 mt-5 px-5 border-[#E41C3B] border rounded-[20px]">
-                      Apply Now
-                    </button>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="py-28 lg:py-40 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between bg-[#E41C3B] px-4 md:px-20 pt-6 md:pt-9 lg:px-40 lg:pt-16 2xl:pt-20 lg:rounded-full">
-            <div className="block">
-              <p className="text-2xl max-w-[700px] md:text-lg lg:text-2xl 2xl:text-4xl font-bold mb-4 md:mb-8 text-white">Download the Misson Even app to find your next job opportunity or connect with the <span className="text-[#2C2C2C]">best women</span> talent in the across any industry in India</p>
-              <Image
-                    src={"/assets/logos/Google Play.png"}
-                    width={215}
-                    height={62}
+                    src={"/assets/logos/jio.png"}
+                    width={64}
+                    height={58.4}
                     alt="company logo"
-                    className="mb-6 md:mb-9 lg:mb-20 md:max-w-[100px] lg:max-w-[180px] 2xl:max-w-[215px] h-auto"
+                    className="block sm:hidden mb-2"
                     />
-            </div>
-            <div className="block w-2/3 ">
-              <Image
-              src={"/assets/banners/mobile-image.png"}
-              width={363}
-              height={62}
-              alt="company logo"
-              className=""
-              />
+                <strong className="font-bold text-lg md:text-xl mb-2 block">Store Floor Manager | Delhi</strong>
+                <p className="font-light text-base text-[#727272]">Posted by HR Services Limited</p>
+                <div className="flex flex-wrap gap-y-1 flex-row md:items-center mt-3 gap-x-1 md:gap-x-3 md:mt-3">
+                    <span className='opacity-80 flex items-center gap-1 md:gap-2 text-xs md:text-[14px]'><MdAccessTime className='inline size-3 md:size-5'/> Full Time</span> 
+                    <span className='opacity-80 flex items-center gap-1 md:gap-2 text-xs md:text-[14px]'><FiCamera className='inline size-3 md:size-5'/> 2-5 years of experience</span>
+                    <span className='opacity-80 flex items-center gap-1 md:gap-2 text-xs md:text-[14px]'><HiOutlineCurrencyRupee className='inline size-3 md:size-5'/> 3L-6 Lacs PA</span>
+                </div>
+                <div className="flex mt-4 flex-wrap opacity-80 gap-2 text-xs md:text-[14px]">
+                  <span>Store Manager</span>
+                  <span>Luxury Sales</span>
+                  <span>Sales Operation</span>
+                </div>
+              </div>
+              <div className="flex flex-col items-end">
+                <Image
+                  src={"/assets/logos/jio.png"}
+                  width={80}
+                  height={73}
+                  alt="company logo"
+                  className="hidden sm:block"
+                  />
+                  <div className="flex gap-2 md:gap-3">
+                    <button className="font-bold text-xs md:text-sm py-2 mt-5 px-5 border-black border rounded-[20px]">
+                      Save
+                    </button>
+                    <button className="font-bold text-xs text-white bg-[#E41C3B] md:text-sm py-2 mt-5 px-5 border-[#E41C3B] border rounded-[20px]">
+                      Apply Now
+                    </button>
+                  </div>
+              </div>
             </div>
           </div>
         </section>
-        <Footer/>
+        <PlayStoreAppAd/>        
     </main>
   );
 }

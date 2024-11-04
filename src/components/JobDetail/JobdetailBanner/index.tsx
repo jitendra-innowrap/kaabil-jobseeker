@@ -10,7 +10,7 @@ import { MdAccessTime } from 'react-icons/md'
 export default function JobdetailBanner() {
   return (
     <div className='container'>
-        <div className="flex flex-col md:flex-row justify-between">
+        <div className="flex flex-col sm:flex-row justify-between">
             <div className="flex flex-col justify-between mb-8 md:mb-0">
                 <div className="block mt-5 md:mt8">
                     <h1 className='text-2xl md:text-3xl lg:text-5xl 2xl:text-6xl font-extrabold'>Senior Store Managers</h1>
@@ -33,12 +33,14 @@ export default function JobdetailBanner() {
                 <div className="flex flex-wrap mt-8 md:mt-16 md:mb-16 gap-2">
                     <button className='py-2 px-4 xl:px-6 text-xs md:text-lg xl:text-xl font-bold rounded-3xl border-[1px] bg-white border-[#E41C3B] text-[#E41C3B]'>Register to Apply</button>
                     <button className='py-2 px-4 xl:px-6 text-xs md:text-lg xl:text-xl font-bold rounded-3xl border-[1px] text-white border-[#E41C3B] bg-[#E41C3B]'>Login to Apply</button>
-                    <button className='py-2 px-4 xl:px-6 text-xs md:text-lg xl:text-xl font-bold rounded-3xl bg-white border-[#E41C3B] text-[#E41C3B]'>Follow</button>
-                    <button className='py-2 px-2 2xl:px-4 text-xs md:text-lg xl:text-xl font-bold rounded-3xl bg-white border-[#E41C3B] text-[#E41C3B]'><GoShareAndroid className='inline size-4 md:size-8'/> Share</button>
-                    <button className='py-2 px-2 2xl:px-4 text-xs md:text-lg xl:text-xl font-bold rounded-3xl bg-white border-[#E41C3B] text-[#E41C3B]'><IoHeartOutline className='inline size-4 md:size-7'/> Save</button>
+                    <div className="flex">
+                        <button className='py-2 px-4 xl:px-6 text-xs md:text-lg xl:text-xl font-bold rounded-3xl bg-white border-[#E41C3B] text-[#E41C3B]'>Follow</button>
+                        <button className='py-2 px-2 2xl:px-4 text-xs md:text-lg xl:text-xl font-bold rounded-3xl bg-white border-[#E41C3B] text-[#E41C3B]'><GoShareAndroid className='inline size-4 md:size-8'/> Share</button>
+                        <button className='py-2 px-2 2xl:px-4 text-xs md:text-lg xl:text-xl font-bold rounded-3xl bg-white border-[#E41C3B] text-[#E41C3B]'><IoHeartOutline className='inline size-4 md:size-7'/> Save</button>    
+                    </div>
                 </div>
             </div>
-            <div className="block min-h-fit max-w-[320px] 2xl:max-w-[380px] border-[#AEA3A3] border-[1px] rounded-[20px] p-[15px] lg:p-[20px] 2xl:p-[25px]">
+            <div className="block min-h-fit max-w-[280px] mx-auto md:mx-0 2xl:max-w-[380px]  border-[#AEA3A3] border-[1px] rounded-[20px] p-[15px] lg:p-[20px] 2xl:p-[25px]">
                 <div className="border-[#AEA3A3] h-[200px] border-b-[1px] grid place-items-center">
                     <div className="relative w-[208] h-[65px] 2xl:w-[260px] 2xl:h-[81px]">
                         <Image
