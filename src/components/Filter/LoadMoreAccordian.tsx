@@ -5,7 +5,6 @@ import { BiChevronDown, BiChevronUp, BiSearch } from 'react-icons/bi';
 import Radio from './Radio';
 import Check from './Check';
 import { handleCommaForQuery } from '@/components/utils';
-import { CheckOptions } from '@/Types/Filter';
 
 export default function LoadMoreAccordian({ 
     fetchMoreItems, 
@@ -62,7 +61,7 @@ export default function LoadMoreAccordian({
       
 
     const loadMore = async () => {
-        setIsLoading(true)
+        // setIsLoading(true)
         // Introduce a one-second delay using setTimeout
         await new Promise((resolve) => setTimeout(resolve, 300));
         // fetchMoreItems(itemsPerPage, pageNumber+1, fetch, search)
@@ -79,7 +78,7 @@ export default function LoadMoreAccordian({
     };
 
     useEffect(() => {
-        setIsLoading(true);
+        // setIsLoading(true);
         // if(fetchMoreItems){
         //     fetchMoreItems(itemsPerPage, pageNumber, fetch, search)
         //     .then(
@@ -95,6 +94,7 @@ export default function LoadMoreAccordian({
         //         return []; // Return an empty array in case of error
         //     });
         // }
+        
     }, [search]);
 
     return (
@@ -103,7 +103,7 @@ export default function LoadMoreAccordian({
                 {({ open }) => (
                     <>
                         <AccordionHeader className="w-full flex justify-between items-center text-black py-4">
-                            <span className="font-bold text-base">{header}</span>
+                            <span className="font-normal text-base">{header}</span>
                             {open ? (
                                 <BiChevronUp className="text-slate-500 font-bold text-xl" />
                             ) : (
@@ -118,7 +118,7 @@ export default function LoadMoreAccordian({
                                         type="text"
                                         value={search}
                                         onChange={e=> setSearch(e.target.value)}
-                                        className="py-3 px-6 w-full font-medium text-sm rounded-[100px] z-0 focus:shadow focus:outline-none bg-[#F5F5F5]"
+                                        className="py-2 px-4 w-full font-medium text-sm rounded-[100px] z-0 focus:shadow focus:outline-none border border-[#8C8C8C] placeholder:text-black placeholder:font-normal"
                                         placeholder={`Search ${header}`}
                                     />
                                     <div className="absolute top-1/2 right-1 -translate-y-1/2">
@@ -128,7 +128,7 @@ export default function LoadMoreAccordian({
                                     </div>
                                 </div>
                             ) : null}
-                            {fetchMoreItems?
+                            {false? // replace with fetchMoreItems when integrated
                             <ul className='mb-4 grid gap-4'>
                             {items.map((item:any) => {
                                 if(isRadio){
@@ -146,7 +146,7 @@ export default function LoadMoreAccordian({
                             })}
                             </ul>
                                 :
-                            <ul className='mb-4 grid gap-4'>
+                            <ul className='mb-4 grid gap-4 max-h-[210px] overflow-y-auto'>
                                 {list.map((item: any) => {
                                     if(isRadio){
                                         return (
@@ -166,9 +166,9 @@ export default function LoadMoreAccordian({
                             {isLoading && fetchMoreItems &&  <div className="flex w-full justify-center mb-7">
                                 <div className="w-5 h-5 border-slate-200 border-2 rounded-full border-r-blue animate-spin"></div>
                             </div>}
-                            {!isCompleted && !isLoading && (
-                                <button onClick={loadMore} type="button" className="mb-4 text-blue">
-                                    Load More
+                            {!isCompleted && !isLoading && fetchMoreItems && (
+                                <button onClick={loadMore} type="button" className="mb-4 text-[#E41C3B] underline">
+                                    View all
                                 </button>
                             )}
                         </AccordionBody>

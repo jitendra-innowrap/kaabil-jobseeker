@@ -10,14 +10,102 @@ export default function FilterSidebar() {
           <h2 className="font-bold text-lg md:text-3xl 2xl:text-4xl">All Filter</h2>
           <div className="flex">
           <BiFilterAlt onClick={() => { setOpen(!open) }} size={24} className='absolute right-0 z-10 -top-14 lg:hidden cursor-pointer' />
-          <div className={`absolute lg:relative z-[1] ${open ? '-right-full lg:right-0' : 'right-0'} transition-all flex flex-col gap-2 xl:gap-4 duration-300 h-max w-full max-w-[290px]`}>
-              {/* <LoadMoreAccordian fetchMoreItems={fetchMoreItems} fetch={fetchSkillsMaster} header="Skills"   selected={skill} setSelected={setSkill}/>
-              <LoadMoreAccordian  fetchMoreItems={fetchMoreItems} fetch={fetchjobRoleMaster} header="Roles"  selected={role} setSelected={setRole}/>
-              <LoadMoreAccordian  fetchMoreItems={fetchMoreItems} fetch={fetchnoticePeriodMaster} header="Notice Period" selected={noticePeriod} setSelected={setNoticePeriod}/>
-              <LoadMoreAccordian  fetchMoreItems={fetchMoreItems} fetch={fetchjobTypeMaster} header="Job Type" selected={jobType} setSelected={setJobType}/> */}
-              <LoadMoreAccordian  isSearchable={true} header="Location" list={[{id:'1', name:'Date'},{id:'2', name:'Relevancy'}]} />
-              <LoadMoreAccordian  list={[{id:'1', name:'Date'},{id:'2', name:'Relevancy'}]} header={"Job Type"}  />
-              <LoadMoreAccordian  list={[{id:'1', name:'Date'},{id:'2', name:'Relevancy'}]} isRadio header={"Sort By"}  />
+          <div className={`absolute lg:relative z-[1] ${open ? '-right-full lg:right-0' : 'right-0'} transition-all flex flex-col gap-2 xl:gap-4 duration-300 h-max w-[290px]`}>
+          <LoadMoreAccordian 
+              header="Job Types"
+              list={[
+                  {id: '1', name: 'Full time'},
+                  {id: '2', name: 'Part time'},
+                  {id: '3', name: 'Freelance'},
+                  {id: '4', name: 'Internship'}
+              ]} 
+          />
+
+        <LoadMoreAccordian 
+            header="Experience" 
+            list={[
+                {id: '1', name: 'Expert'},
+                {id: '2', name: 'Intermediate'},
+                {id: '3', name: 'Beginner'}
+            ]} 
+        />
+
+        <LoadMoreAccordian 
+            header="Sectors" 
+            isSearchable={true} 
+            fetchMoreItems={true}
+            list={[
+                {id: '1', name: 'Search Sector'},
+                {id: '2', name: 'IT'},
+                {id: '3', name: 'Media'},
+                {id: '4', name: 'FinTech'},
+                {id: '5', name: 'Telecom'},
+                {id: '6', name: 'Hospitality'},
+                {id: '7', name: 'Retail'},
+                {id: '8', name: 'Education'},
+                {id: '9', name: 'Healthcare'},
+                {id: '10', name: 'Construction'},
+                {id: '11', name: 'Transportation'},
+                {id: '12', name: 'Real Estate'}
+            ]} 
+        />
+
+        <LoadMoreAccordian 
+            header="City" 
+            isSearchable={true} 
+            fetchMoreItems={true}
+            list={[
+                {id: '1', name: 'Search City'},
+                {id: '2', name: 'Delhi/NCR (50)'},
+                {id: '3', name: 'Gurugram (45)'},
+                {id: '4', name: 'Faridabad (20)'},
+                {id: '5', name: 'Mumbai (15)'},
+                {id: '6', name: 'Ahmedabad (13)'},
+                {id: '7', name: 'Uttar Pradesh (7)'},
+                {id: '8', name: 'Bengaluru (30)'},
+                {id: '9', name: 'Chennai (25)'},
+                {id: '10', name: 'Pune (18)'},
+                {id: '11', name: 'Kolkata (12)'},
+                {id: '12', name: 'Hyderabad (22)'}
+            ]} 
+        />
+
+        <LoadMoreAccordian 
+            header="Companies" 
+            isSearchable={true} 
+            fetchMoreItems={true}
+            list={[
+                {id:'1', name:'IT Company A'},
+                {id:'2', name:'IT Company B'},
+                {id:'3', name:'Media Company A'},
+                {id:'4', name:'FinTech Company A'},
+                {id:'5', name:'Telecom Company A'}
+            ]} 
+        />
+
+        <LoadMoreAccordian 
+            header="Skills" 
+            isSearchable={true} 
+            fetchMoreItems={true}
+            list={[
+                {id:'1', name:'JavaScript'},
+                {id:'2', name:'Python'},
+                {id:'3', name:'Project Management'},
+                {id:'4', name:'Data Analysis'},
+                {id:'5', name:'Graphic Design'}
+            ]} 
+        />
+
+        <LoadMoreAccordian 
+            header="Benefits" 
+            list={[
+                {id:'1', name:'Health Insurance'},
+                {id:'2', name:'Paid Time Off'},
+                {id:'3', name:'Retirement Plan'},
+                {id:'4', name:'Remote Work Options'},
+                {id:'5', name:'Professional Development'}
+            ]} 
+        />
           </div>
           </div>
 

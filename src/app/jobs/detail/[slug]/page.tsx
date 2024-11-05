@@ -13,7 +13,7 @@ import { MdAccessTime } from "react-icons/md";
 export default function Home() {
   return (
     <main className="">
-        <div className="container gap-1 flex-wrap flex items-center text-[#4d4d4f]">
+        <div className="container mb-5 mt-10 md:mt-14 2xl:mt-20 gap-1 flex-wrap flex items-center text-[#4d4d4f]">
           <Breadcrumb root="Home" category="For Women" subCategory="Employer" subcategory2="Swiggy" subcategory3="Jobs" />
         </div>
         <JobdetailBanner />
