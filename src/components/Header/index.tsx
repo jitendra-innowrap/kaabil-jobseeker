@@ -3,19 +3,20 @@ import React from 'react'
 import Hamburger from 'hamburger-react'
 import { SlMagnifier } from 'react-icons/sl'
 import BurgerMenu from './BurgerMenu'
+import Link from 'next/link'
 
 export default function Header() {
 
   return (
     <header>
         <div className='flex py-4 md:py-0 justify-between md:justify-start border-b-[1px] border-[#A7A7A7] pl-5 xl:pl-14 2xl:pl-16'>
-            <div className="flex relative pr-4 items-center">
+            <Link href="/" className="flex relative pr-4 items-center">
                 <img
                     src="/assets/logos/Kaabil logo.svg"
                     className='w-auto max-w-fit h-[50px] xl:h-[80px] 2xl:h-[100px]'
                     alt='kaabil logo'
                     />
-            </div>
+            </Link>
             <div className="hidden md:flex h-full border-l-[1px] border-[#A7A7A7] flex-col w-[-webkit-fill-available]">
                 <div className="flex justify-between items-center py-2 pl-8 border-b-[1px] border-[#A7A7A7] pr-5 md:pr-10 2xl:pr-16">
                     <div className="flex gap-3 py-4">

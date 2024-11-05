@@ -279,7 +279,7 @@ export default function JobList() {
                 <div className="block">
                   <strong className="font-bold text-lg md:text-xl mb-4 md:mb-5 2xl:mb-6 block">Find job by salary</strong>
                 </div>
-                <div className="flex gap-2 md:gap-3 overflow-x-auto items-end">
+                <div className="flex gap-2 md:gap-3 overflow-x-auto custom-scrollbar items-end">
                   <div className="bg-white px-6 md:px-7 py-4 md:py-5 rounded-[10px] whitespace-nowrap">
                     <p className="text-sm mb-2">₹ 0 to 5 Lacs</p>
                     <p className="text-[#5912A1] text-xs">10 jobs</p>

@@ -146,7 +146,7 @@ export default function LoadMoreAccordian({
                             })}
                             </ul>
                                 :
-                            <ul className='mb-4 grid gap-4 max-h-[210px] overflow-y-auto'>
+                            <ul className='mb-4 grid gap-4 max-h-[210px] overflow-y-auto custom-scrollbar'>
                                 {list.map((item: any) => {
                                     if(isRadio){
                                         return (
