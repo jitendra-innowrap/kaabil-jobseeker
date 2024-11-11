@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --primary-red: #E41C3B;
   --foreground: #171717;
 }
 
@@ -105,6 +105,11 @@ body {
   max-width: 1440px;
   margin-inline: auto;
 }
+.container-left{
+  padding-left: 20px;
+  max-width: 1440px;
+  margin-inline: auto;
+}
 .seach-section .css-hlgwow, .seach-section input,.seach-section button{
   height: 52px;
   padding-left: 1.5rem; 
@@ -118,6 +123,11 @@ body {
 @media (width >= 1024px) {
   .container {
     padding-inline: 80px !important;
+  }
+}
+@media (width >= 1024px) {
+  .container-left {
+    padding-left: 80px !important;
   }
 }
 @media (width>=1280){

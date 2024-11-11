@@ -9,8 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
+        primary: "var(--primary-red)",
         foreground: "var(--foreground)",
+      },
+      animation: {
+        "infinite-slider": "infiniteSlider 20s linear infinite",
+        "infinite-slider-reverse": "infiniteSliderReverse 20s linear infinite",
+      },
+      keyframes: {
+        infiniteSlider: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(calc(-250px * 5))" }, // Adjust based on your item width
+        },
+        infiniteSliderReverse: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(calc(250px * 5))" }, // Adjust based on your item width
+        },
       },
     },
   },

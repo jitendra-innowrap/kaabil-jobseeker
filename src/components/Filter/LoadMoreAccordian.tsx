@@ -5,7 +5,19 @@ import { BiChevronDown, BiChevronUp, BiSearch } from 'react-icons/bi';
 import Radio from './Radio';
 import Check from './Check';
 import { handleCommaForQuery } from '@/components/utils';
-
+// Define the types for the props
+interface LoadMoreAccordionProps {
+    fetchMoreItems: (itemsPerPage: number, pageNumber: number, fetch: any, search: string) => Promise<any>;
+    header: string;
+    fetch: any; // Define a more specific type if possible
+    selected: string;
+    setSelected: (selected: string) => void;
+    isSearchable?: boolean;
+    isRadio?: boolean;
+    initialList?: Array<{ id: number; name: string }>;
+    itemsPerPage?: number;
+    list: Array<{ id: number; name: string }>;
+}
 export default function LoadMoreAccordian({ 
     fetchMoreItems, 
     header,

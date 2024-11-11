@@ -40,7 +40,9 @@ export default function Home() {
         </div>
       </div>
       <div className="container xl:!px-7">
-        <SearchSection/>
+        <div className="seach-section bg-[#2C2C2C] rounded-full px-5 py-8 md:px-14 md:py-12 xl:px-24 xl:py-14 2xl:px-20">
+          <SearchSection/>
+        </div>
       </div>
 
       <section className="container">

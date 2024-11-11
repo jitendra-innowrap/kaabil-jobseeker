@@ -8,8 +8,8 @@ import Link from 'next/link'
 export default function Header() {
 
   return (
-    <header>
-        <div className='flex py-4 md:py-0 justify-between md:justify-start border-b-[1px] border-[#A7A7A7] pl-5 xl:pl-14 2xl:pl-16'>
+    <header className='border-b-[1px] border-[#A7A7A7]'>
+        <div className='flex max-w-[1440px] mx-auto py-4 md:py-0 justify-between md:justify-start pl-5 xl:pl-14 2xl:pl-16'>
             <Link href="/" className="flex relative pr-4 items-center">
                 <img
                     src="/assets/logos/Kaabil logo.svg"
@@ -30,17 +30,19 @@ export default function Header() {
                 </div>
                 <div className="flex justify-between pl-8 pr-5 md:pr-10 2xl:pr-16 items-center">
                     <ul className="flex py-4 gap-4 xl:gap-8 lg:text-lg xl:text-xl">
-                        <li>Home</li>
-                        <li>pathfinder</li>
-                        <li>Community Forum</li>
-                        <li>LMS</li>
-                        <li>About</li>
+                        <li><Link href={"/"}>Home</Link></li>
+                        <li><Link href={"/"}>pathfinder</Link></li>
+                        <li><Link href={"/"}>Community Forum</Link></li>
+                        <li><Link href={"/"}>LMS</Link></li>
+                        <li><Link href={"/"}>About</Link></li>
                     </ul>
-                    <img
+                    <Link href={"/"}>
+                        <img
                         src="/assets/logos/Google Play light.svg"
                         className='w-auto h-[34px] xl:h-[44px]'
                         alt='Google Play Logo'
-                    />
+                        />
+                    </Link>
                 </div>
             </div>
             <div className="md:hidden mr-4">
