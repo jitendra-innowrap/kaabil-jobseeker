@@ -4,9 +4,11 @@ import { BiFilterAlt, BiSolidFilterAlt } from 'react-icons/bi'
 import LoadMoreAccordian from './LoadMoreAccordian'
 import { VscListFilter } from 'react-icons/vsc'
 import { HiOutlineFilter } from 'react-icons/hi'
+import RangeAccordian from './RangeAccordian'
+import PopularTags from './PopularTags'
 
 export default function FilterSidebar() {
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(false);
   return (
     <div className="flex relative flex-col w-full items-start lg:gap-7 xl:gap-10 2xl:gap-12">
         <h2 className="font-bold text-lg md:text-3xl 2xl:text-4xl hidden lg:block">All Filter</h2>
@@ -107,6 +109,9 @@ export default function FilterSidebar() {
                         {id:'5', name:'Professional Development'}
                     ]} 
                 />
+
+                <RangeAccordian/>
+                <PopularTags/>
             </div>
         </div>
         

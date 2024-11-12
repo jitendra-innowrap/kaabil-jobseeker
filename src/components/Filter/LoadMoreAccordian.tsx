@@ -1,118 +1,91 @@
 'use client'
 import React, { useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from 'react-headless-accordion';
 import { BiChevronDown, BiChevronUp, BiSearch } from 'react-icons/bi';
 import Radio from './Radio';
 import Check from './Check';
 import { handleCommaForQuery } from '@/components/utils';
+
 // Define the types for the props
 interface LoadMoreAccordionProps {
-    fetchMoreItems: (itemsPerPage: number, pageNumber: number, fetch: any, search: string) => Promise<any>;
+    fetchMoreItems?: any // (itemsPerPage: number, pageNumber: number, fetch: any, search: string) => Promise<any>;
     header: string;
-    fetch: any; // Define a more specific type if possible
-    selected: string;
-    setSelected: (selected: string) => void;
+    fetch?: any; // Define a more specific type if possible
     isSearchable?: boolean;
     isRadio?: boolean;
     initialList?: Array<{ id: number; name: string }>;
     itemsPerPage?: number;
-    list: Array<{ id: number; name: string }>;
+    list: Array<{ id: number|string; name: string }>;
 }
-export default function LoadMoreAccordian({ 
+
+export default function LoadMoreAccordion({ 
     fetchMoreItems, 
     header,
     fetch,
-    selected,
-    setSelected,
     isSearchable = false, 
     isRadio = false, 
     initialList = [], 
     itemsPerPage = 5,
     list
-}) {
-    const [items, setItems] = useState(initialList);
-    const [isLoading, setIsLoading] = useState(false);
-    const [isCompleted, setIsCompleted] = useState(false);
-    const [pageNumber, setPageNumber] = useState(1);
+}: LoadMoreAccordionProps) {
+    const [selected, setSelected] = useState<String>()    
     const [search, setSearch] = useState("");
-    
-    const handleCheck = (item) => {
-        // Convert the selected string to an array
-        const selectedArray = selected ? selected?.split('|') : [];
-    
-        // Replace commas in the item name with a special character
-        // const itemName = handleCommaForQuery(item.name);
-        const itemName = item.name;
-    
-        // Check if the item is already selected
-        const isSelected = selectedArray?.includes(itemName);
-      
-        if (isSelected) {
-          // If selected, remove it from the selected array
-          const updatedSelected = selectedArray?.filter((selectedItem) => selectedItem !== itemName);
-          // Convert the updated selected array back to a string with the special character as delimiter
-          setSelected(updatedSelected.join('|'));
-        } else {
-          // If not selected, add it to the selected array
-          const updatedSelected = [...selectedArray, itemName];
-          // Convert the updated selected array back to a string with the special character as delimiter
-          setSelected(updatedSelected.join('|'));
-        }
-    };
-    const handleRadio = (item) => {
-        const isSelected = selected === item.name;
-      
-        if (isSelected) {
-          setSelected("");
-        } else {
-          setSelected(item.name);
-        }
-    }
-    
-      
-      
+    const router = useRouter();
+    const searchParams = useSearchParams();
 
-    const loadMore = async () => {
-        // setIsLoading(true)
-        // Introduce a one-second delay using setTimeout
-        await new Promise((resolve) => setTimeout(resolve, 300));
-        // fetchMoreItems(itemsPerPage, pageNumber+1, fetch, search)
-        //     .then(response => {
-        //         setItems(prevItems => [...prevItems, ...response?.data]);
-        //         setPageNumber(pageNumber + 1);
-        //         setIsLoading(false);
-        //         setIsCompleted(pageNumber+1 >= Math.ceil(response.total / itemsPerPage))
-        //     })
-        //     .catch(error => {
-        //         console.error('Error fetching more items:', error);
-        //         setIsLoading(false);
-        //     });
-    };
-
+    // Load filters from URL on initial load
     useEffect(() => {
-        // setIsLoading(true);
-        // if(fetchMoreItems){
-        //     fetchMoreItems(itemsPerPage, pageNumber, fetch, search)
-        //     .then(
-        //         response => {console.log(response.data),
-        //         setItems(response?.data),
-        //         setIsLoading(false)
-        //         setIsCompleted(pageNumber+1 >= Math.ceil(response.total / itemsPerPage))
+        const urlFilters = searchParams.get(header.toLowerCase());
+        if (urlFilters) {
+            setSelected(urlFilters);
+        }
+    }, [searchParams, header, setSelected]);
 
-        //     }
-        // ).catch(error => {
-        //         setIsLoading(false),
-        //         console.error('Error fetching more items:', error)
-        //         return []; // Return an empty array in case of error
-        //     });
-        // }
-        
-    }, [search]);
+    const handleCheck = (item: { id: number|string; name: string }) => {
+        const selectedArray = selected ? selected?.split('|') : [];
+        const itemName = item.name;
+        const isSelected = selectedArray.includes(itemName);
+
+        let updatedSelected;
+        if (isSelected) {
+            updatedSelected = selectedArray.filter(selectedItem => selectedItem !== itemName);
+        } else {
+            updatedSelected = [...selectedArray, itemName];
+        }
+
+        const newSelected = updatedSelected?.join('|');
+        setSelected(newSelected);
+
+        // Update the URL parameters
+        const params = new URLSearchParams(searchParams.toString());
+        if (newSelected) {
+            params.set(header.toLowerCase(), newSelected);
+        } else {
+            params.delete(header.toLowerCase());
+        }
+        router.push(`?${params.toString()}`, { scroll: false });
+    };
+
+    const handleRadio = (item: { id: number|string; name: string }) => {
+        const isSelected = selected === item.name;
+        const newSelected = isSelected ? '' : item.name;
+        setSelected(newSelected);
+
+        // Update the URL parameters
+        const params = new URLSearchParams(searchParams.toString());
+        if (newSelected) {
+            params.set(header.toLowerCase(), newSelected);
+        } else {
+            params.delete(header.toLowerCase());
+        }
+        router.push(`?${params.toString()}`, { scroll: false });
+    };
 
     return (
         <Accordion className='border bg-white px-7 border-[#A7A7A7] rounded-[20px]' transition={{ duration: '300ms', timingFunction: 'cubic-bezier(0, 0, 0.2, 1)' }}>
             <AccordionItem isActive={true}>
-                {({ open }) => (
+                {({ open }:any) => (
                     <>
                         <AccordionHeader className="w-full flex justify-between items-center text-black py-4">
                             <span className="font-normal text-base">{header}</span>
@@ -122,14 +95,13 @@ export default function LoadMoreAccordian({
                                 <BiChevronDown className="text-slate-500 font-bold text-xl" />
                             )}
                         </AccordionHeader>
-
                         <AccordionBody>
                             {isSearchable ? (
                                 <div className="relative mb-4">
                                     <input
                                         type="text"
                                         value={search}
-                                        onChange={e=> setSearch(e.target.value)}
+                                        onChange={(e) => setSearch(e.target.value)}
                                         className="py-2 px-4 w-full font-medium text-sm rounded-[100px] z-0 focus:shadow focus:outline-none border border-[#8C8C8C] placeholder:text-black placeholder:font-normal"
                                         placeholder={`Search ${header}`}
                                     />
@@ -139,50 +111,20 @@ export default function LoadMoreAccordian({
                                         </button>
                                     </div>
                                 </div>
-                            ) : null}
-                            {false? // replace with fetchMoreItems when integrated
-                            <ul className='mb-4 grid gap-4'>
-                            {items.map((item:any) => {
-                                if(isRadio){
-                                    return (
-                                        <li key={item.id} onClick={()=> handleRadio(item)}>
-                                            <Radio item={item.name} checked={selected===item.name} /> 
-                                        </li>
-                                    );
-                                }
-                                    return (
-                                        <li key={item.id} onClick={()=> handleCheck(item)}>
-                                                <Check item={item.name} checked={selected?.split('|').includes(item.name)} />
-                                        </li>
-                                    );
-                            })}
-                            </ul>
-                                :
+                            ):<></>}
                             <ul className='mb-4 grid gap-4 max-h-[210px] overflow-y-auto custom-scrollbar'>
-                                {list.map((item: any) => {
-                                    if(isRadio){
-                                        return (
-                                            <li key={item.id} onClick={()=> handleRadio(item)}>
-                                                <Radio item={item.name} checked={selected===item.name} /> 
-                                            </li>
-                                        );
-                                    }
-                                        return (
-                                            <li key={item.id} onClick={()=> handleCheck(item)}>
-                                                    <Check item={item.name} checked={selected?.split(',').includes(handleCommaForQuery(item.name))} />
-                                            </li>
-                                        );
-                                })}
+                                {list.map((item) => (
+                                    isRadio ? (
+                                        <li key={item.id} onClick={() => handleRadio(item)}>
+                                            <Radio item={item.name} checked={selected === item.name} />
+                                        </li>
+                                    ) : (
+                                        <li key={item.id} onClick={() => handleCheck(item)}>
+                                            <Check item={item.name} checked={selected?.split('|').includes(item.name) || false} />
+                                        </li>
+                                    )
+                                ))}
                             </ul>
-                            }
-                            {isLoading && fetchMoreItems &&  <div className="flex w-full justify-center mb-7">
-                                <div className="w-5 h-5 border-slate-200 border-2 rounded-full border-r-blue animate-spin"></div>
-                            </div>}
-                            {!isCompleted && !isLoading && fetchMoreItems && (
-                                <button onClick={loadMore} type="button" className="mb-4 text-[#E41C3B] underline">
-                                    View all
-                                </button>
-                            )}
                         </AccordionBody>
                     </>
                 )}
