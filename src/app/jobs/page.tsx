@@ -29,18 +29,18 @@ export default function Home() {
                 </div>
             </div>
             <div className="block">
-                        <Image
-                            src={"/assets/banners/job-banner.png"}
-                            width={280}
-                            height={350}
-                            className='w-[280px] xl:w-[350px] !h-auto'
-                            alt='Jobs for Women'
-                            />
+              <Image
+                  src={"/assets/banners/job-banner.png"}
+                  width={280}
+                  height={350}
+                  className='w-[280px] mx-auto xl:w-[350px] !h-auto'
+                  alt='Jobs for Women'
+                  />
             </div>
         </div>
       </div>
       <div className="container xl:!px-7">
-        <div className="seach-section bg-[#2C2C2C] rounded-full px-5 py-8 md:px-14 md:py-12 xl:px-24 xl:py-14 2xl:px-20">
+        <div className="seach-section bg-[#2C2C2C] rounded-3xl md:rounded-full px-5 py-8 md:px-14 md:py-12 xl:px-24 xl:py-14 2xl:px-20">
           <SearchSection/>
         </div>
       </div>
@@ -48,16 +48,16 @@ export default function Home() {
       <section className="container">
         <div className="my-5 md:my-8 2xl:my-10 flex items-center gap-5 md:gap-7 xl:gap-10 2xl:gap-12">
           <h2 className="font-bold text-lg md:text-3xl 2xl:text-4xl">Popular Jobs</h2>
-          <ul className="flex gap-2 md:gap-4">
-            <li className="rounded-[36px] px-4 md:px-6 py-2 md:py-4 border font-medium border-black text-base md:text-lg 2xl:text-2xl min-w-[70px] text-center capitalize">Retail</li>
-            <li className="rounded-[36px] px-4 md:px-6 py-2 md:py-4 border font-medium border-black text-base md:text-lg 2xl:text-2xl min-w-[70px] text-center capitalize">Manufacturing</li>
-            <li className="rounded-[36px] px-4 md:px-6 py-2 md:py-4 border font-medium border-black text-base md:text-lg 2xl:text-2xl min-w-[70px] text-center capitalize">IT</li>
-            <li className="rounded-[36px] px-4 md:px-6 py-2 md:py-4 border font-medium border-black text-base md:text-lg 2xl:text-2xl min-w-[70px] text-center capitalize">Healthcare</li>
-            <li className="rounded-[36px] px-4 md:px-6 py-2 md:py-4 border font-medium border-black text-base md:text-lg 2xl:text-2xl min-w-[70px] text-center capitalize">Hospitality</li>
-            <li className="rounded-[36px] px-4 md:px-6 py-2 md:py-4 border font-medium border-black text-base md:text-lg 2xl:text-2xl min-w-[70px] text-center capitalize">Travel</li>
+          <ul className="flex overflow-auto gap-2 md:gap-4">
+            <li className="rounded-[36px] px-4 md:px-6 py-2 md:py-4 border font-medium border-black text-base md:text-lg 2xl:text-2xl w-[70px] min-w-fit text-center capitalize">Retail</li>
+            <li className="rounded-[36px] px-4 md:px-6 py-2 md:py-4 border font-medium border-black text-base md:text-lg 2xl:text-2xl w-[70px] min-w-fit text-center capitalize">Manufacturing</li>
+            <li className="rounded-[36px] px-4 md:px-6 py-2 md:py-4 border font-medium border-black text-base md:text-lg 2xl:text-2xl w-[70px] min-w-fit text-center capitalize">IT</li>
+            <li className="rounded-[36px] px-4 md:px-6 py-2 md:py-4 border font-medium border-black text-base md:text-lg 2xl:text-2xl w-[70px] min-w-fit text-center capitalize">Healthcare</li>
+            <li className="rounded-[36px] px-4 md:px-6 py-2 md:py-4 border font-medium border-black text-base md:text-lg 2xl:text-2xl w-[70px] min-w-fit text-center capitalize">Hospitality</li>
+            <li className="rounded-[36px] px-4 md:px-6 py-2 md:py-4 border font-medium border-black text-base md:text-lg 2xl:text-2xl w-[70px] min-w-fit text-center capitalize">Travel</li>
           </ul>
         </div>
-        <div className="mt-10 md:mt-16 2xl:mt-[70px] flex gap-5 md:gap-7 xl:gap-10">
+        <div className="lg:mt-16 2xl:mt-[70px] flex flex-col lg:flex-row gap-5 md:gap-7 xl:gap-10">
             <FilterSidebar/>
             <JobList />
         </div>

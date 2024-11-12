@@ -1,6 +1,8 @@
 'use client';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import ResourceCard from '../Common/ResourceCard';
+import GallerySlider from '../JobDetail/Slider/GallarySlider';
 
 // Define types for categories and resources
 interface Category {
@@ -178,23 +180,20 @@ export default function Resources() {
                     ))}
                 </ul>
             </div>
-            <div className="w-full flex gap-5 md:gap-7 xl:gap-9 2xl:gap-10 overflow-auto mb-5 md:mb-8 xl:mb-14 2xl:mb-16">
-                {resourcesData[selectedCategory]?.map(resource => (
-                    <div key={resource.id} className="block min-w-[203px] xl:min-w-[403px]">
-                        <div className="relative aspect-w-403 aspect-h-227 mb-5 xl:mb-6">
-                            <Image
-                                src={resource.imageUrl}
-                                alt='Resource image'
-                                width={409}
-                                height={279}
-                                draggable="false"
-                                className="object-cover w-full h-full"
-                            />
-                        </div>
-                        <h4 className="font-bold text-white text-xl md:text-2xl xl:text-3xl 2xl:text-4xl">{resource.title}</h4>
-                    </div>
-                ))}
+            <div className="w-full overflow-auto flex gap-5 md:gap-7 xl:gap-9 2xl:gap-10 mb-5 md:mb-8 xl:mb-14 2xl:mb-16">
+                <div className="">
+                    <GallerySlider
+                    slides={resourcesData[selectedCategory]}
+                    freeMode={true}
+                    slideComponent={ResourceCard}
+                    autoplayDuration={2000}
+                    speed={4000}
+                    autoplay={true}
+                    spaceBetween={35}
+                    slidesPerView={"auto"}
+                    />
+                </div>
             </div>
         </div>
     );
-}
+}   

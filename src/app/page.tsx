@@ -9,7 +9,9 @@ import PlayStoreAppAd from "@/components/Banners/PlaystoreAppAd";
 import SearchSection from "@/components/SearchSection";
 import InfiniteSlider from "@/components/JobDetail/Slider/InfiniteSlider";
 import Resources from "@/components/Resorces";
-
+import CompanyLogosSlider from "@/components/JobDetail/Slider/CompanyLogosSlider";
+import SuccessStorySlider from "@/components/JobDetail/Slider/SuccessStorySlider";
+import Link from "next/link";
 export default function Home() {
     return (
         <article>
@@ -68,14 +70,16 @@ export default function Home() {
             <section className="border-t-black border-b-black border-b border-t py-5 md:py-8 xl:py-14 2xl:py-16">
                 <h3 className="text-2xl md:text-3xl xl:text-4xl 2xl:text-[55px] font-bold container">Explore Jobs in Top Industries</h3>
                 <div className="w-full my-5 md:my-8 xl:my-14 2xl:my-16 max-w-[1440px] mx-auto">
-                    <InfiniteSlider direction="ltr" />
-                    <InfiniteSlider direction="rtl" />
+                    <div className="flex flex-col gap-4 md:gap-5 xl:gap-7">
+                        <InfiniteSlider reverse={true} />
+                        <InfiniteSlider  />
+                    </div>
                 </div>
             </section>
             <section className="border-t-black border-b-black border-b border-t py-5 md:py-8 xl:py-14 2xl:py-16">
                 <h3 className="text-2xl md:text-3xl xl:text-4xl 2xl:text-[55px] font-bold container">Top Companies for Women's Career Development</h3>
                 <div className="w-full my-5 md:my-8 xl:my-14 2xl:my-16 max-w-[1440px] mx-auto">
-                    <InfiniteSlider direction="ltr" />
+                    <CompanyLogosSlider />
                 </div>
                 <div className="container block text-end">
                     <button type="button" className="mb-4 text-[#E41C3B] underline">
@@ -86,8 +90,9 @@ export default function Home() {
             <section className="border-t-black border-b-black border-b border-t py-5 md:py-8 xl:py-14 2xl:py-16">
                 <div className="container">
                     <h3 className="text-2xl md:text-3xl xl:text-4xl 2xl:text-[55px] font-bold max-w-[745px]">Build Your Career with the Right Tools and Guidance`</h3>
-                    <div className="w-full flex gap-5 md:gap-7 xl:gap-9 2xl:gap-10 overflow-auto my-5 md:my-8 xl:my-14 2xl:my-16">
-                        <div className="block min-w-[289px] md:min-w-[339px] xl:min-w-[409px]">
+                    <div className="w-full flex flex-col md:flex-row gap-5 md:gap-7 xl:gap-9 2xl:gap-10 overflow-auto my-5 md:my-8 xl:my-14 2xl:my-16">
+                        <div className="flex flex-col justify-between mx-auto sm:w-[439px] md:w-[339px] xl:w-[409px] min-h-full">
+                            <div className="block">
                             <div className="relative aspect-w-409 aspect-h-279 mb-5 xl:mb-6">
                                 <Image
                                     src={"/assets/sliders/community_slider1.png"}
@@ -100,12 +105,14 @@ export default function Home() {
                             </div>
                             <h4 className="font-bold text-xl md:text-2xl xl:text-3xl 2xl:text-4xl">Pathfinder</h4>
                             <p className="text-lg py-5 xl:py-6 md:text-xl xl:text-2xl 2xl:text-[26px] opacity-80 font-normal">Discover personalised career paths that match your strengths and skills.</p>
-                            <button className="font-bold text-base xl:text-lg 2xl:text-xl px-4 py-2 xl:px-7 2xl:px-8 xl:py-3 border rounded-full text-white bg-[#E41C3B]">Find Your Path</button>
+                            </div>
+                            <button className="font-bold w-fit text-base xl:text-lg 2xl:text-xl px-4 py-2 xl:px-7 2xl:px-8 xl:py-3 border rounded-full text-white bg-[#E41C3B]">Find Your Path</button>
                         </div>
-                        <div className="block min-w-[289px] md:min-w-[339px] xl:min-w-[409px]">
+                        <div className="flex flex-col justify-between mx-auto sm:w-[439px] md:w-[339px] xl:w-[409px] min-h-full">
+                            <div className="block">
                             <div className="relative aspect-w-409 aspect-h-279 mb-5 xl:mb-6">
                                 <Image
-                                    src={"/assets/sliders/community_slider1.png"}
+                                    src={"/assets/sliders/community_slider2.png"}
                                     alt='Community image'
                                     width={409}
                                     height={279}
@@ -113,14 +120,16 @@ export default function Home() {
                                     className="object-cover w-full h-full"
                                 />
                             </div>
-                            <h4 className="font-bold text-xl md:text-2xl xl:text-3xl 2xl:text-4xl">Pathfinder</h4>
-                            <p className="text-lg py-5 xl:py-6 md:text-xl xl:text-2xl 2xl:text-[26px] opacity-80 font-normal">Discover personalised career paths that match your strengths and skills.</p>
-                            <button className="font-bold text-base xl:text-lg 2xl:text-xl px-4 py-2 xl:px-7 2xl:px-8 xl:py-3 border rounded-full text-white bg-[#E41C3B]">Find Your Path</button>
+                            <h4 className="font-bold text-xl md:text-2xl xl:text-3xl 2xl:text-4xl">Community Forums</h4>
+                            <p className="text-lg py-5 xl:py-6 md:text-xl xl:text-2xl 2xl:text-[26px] opacity-80 font-normal">Join discussions, share advice, and connect with women on similar journeys</p>
+                            </div>
+                            <button className="font-bold w-fit text-base xl:text-lg 2xl:text-xl px-4 py-2 xl:px-7 2xl:px-8 xl:py-3 border rounded-full text-white bg-[#E41C3B]">Join the Community</button>
                         </div>
-                        <div className="block min-w-[289px] md:min-w-[339px] xl:min-w-[409px]">
+                        <div className="flex flex-col justify-between mx-auto sm:w-[439px] md:w-[339px] xl:w-[409px] min-h-full">
+                            <div className="block">
                             <div className="relative aspect-w-409 aspect-h-279 mb-5 xl:mb-6">
                                 <Image
-                                    src={"/assets/sliders/community_slider1.png"}
+                                    src={"/assets/sliders/community_slider3.png"}
                                     alt='Community image'
                                     width={409}
                                     height={279}
@@ -128,24 +137,10 @@ export default function Home() {
                                     className="object-cover w-full h-full"
                                 />
                             </div>
-                            <h4 className="font-bold text-xl md:text-2xl xl:text-3xl 2xl:text-4xl">Pathfinder</h4>
-                            <p className="text-lg py-5 xl:py-6 md:text-xl xl:text-2xl 2xl:text-[26px] opacity-80 font-normal">Discover personalised career paths that match your strengths and skills.</p>
-                            <button className="font-bold text-base xl:text-lg 2xl:text-xl px-4 py-2 xl:px-7 2xl:px-8 xl:py-3 border rounded-full text-white bg-[#E41C3B]">Find Your Path</button>
-                        </div>
-                        <div className="block min-w-[289px] md:min-w-[339px] xl:min-w-[409px]">
-                            <div className="relative aspect-w-409 aspect-h-279 mb-5 xl:mb-6">
-                                <Image
-                                    src={"/assets/sliders/community_slider1.png"}
-                                    alt='Community image'
-                                    width={409}
-                                    height={279}
-                                    draggable="false"
-                                    className="object-cover w-full h-full"
-                                />
+                            <h4 className="font-bold text-xl md:text-2xl xl:text-3xl 2xl:text-4xl">Learning Management System</h4>
+                            <p className="text-lg py-5 xl:py-6 md:text-xl xl:text-2xl 2xl:text-[26px] opacity-80 font-normal">Learn and upskill with free or low-cost courses that get you job-ready.</p>
                             </div>
-                            <h4 className="font-bold text-xl md:text-2xl xl:text-3xl 2xl:text-4xl">Pathfinder</h4>
-                            <p className="text-lg py-5 xl:py-6 md:text-xl xl:text-2xl 2xl:text-[26px] opacity-80 font-normal">Discover personalised career paths that match your strengths and skills.</p>
-                            <button className="font-bold text-base xl:text-lg 2xl:text-xl px-4 py-2 xl:px-7 2xl:px-8 xl:py-3 border rounded-full text-white bg-[#E41C3B]">Find Your Path</button>
+                            <button className="font-bold w-fit text-base xl:text-lg 2xl:text-xl px-4 py-2 xl:px-7 2xl:px-8 xl:py-3 border rounded-full text-white bg-[#E41C3B]">Start Learning</button>
                         </div>
                     </div>
                 </div>
@@ -157,7 +152,7 @@ export default function Home() {
                     <div className="block max-w-[380px] mt-10 md:mt-0">
                         <h3 className="text-2xl md:text-3xl xl:text-4xl 2xl:text-[45px] font-bold ">Job Exchange</h3>
                         <p className="text-lg py-5 xl:py-6 md:text-xl xl:text-2xl 2xl:text-[26px] font-normal">Browse job listings from employers looking for skilled women like you`</p>
-                        <button className="font-bold text-base xl:text-lg 2xl:text-xl px-4 py-2 xl:px-7 2xl:px-8 xl:py-3 border rounded-full text-white bg-[#E41C3B]">Find Jobs</button>
+                        <Link href={"/jobs"} className="font-bold text-base xl:text-lg 2xl:text-xl px-4 py-2 xl:px-7 2xl:px-8 xl:py-3 border rounded-full text-white bg-[#E41C3B]">Find Jobs</Link>
                     </div>
                     <div className="block w-full">
                         <div className="flex flex-col gap-4 md:gap-6">
@@ -213,54 +208,7 @@ export default function Home() {
                 <h3 className="container text-2xl md:text-3xl xl:text-4xl 2xl:text-[55px] font-bold ">Success Stories</h3>
                 <p className="container text-lg py-5 xl:py-6 md:text-xl xl:text-2xl 2xl:text-[26px] font-normal">Read inspiring stories of women who found success through <span className="font-bold text-[#E41C3B]">Kaabil</span>.</p>
                 <div className="container-left flex py-3 xl:py-8 overflow-auto gap-5 xl:gap-8 2xl:gap-10">
-                    <div className="block bg-[#FFEDCE] p-6 rounded-3xl min-w-[80%] xl:min-w-[780px] md:p-8 xl:p-10 2xl:p-12">
-                        <Image
-                            src={"/assets/icons/qoutes.png"}
-                            width={100}
-                            height={100}
-                            alt="company logo"
-                            className="hidden sm:block"
-                        />
-                        <p className="text-lg xl:text-2xl 2xl:text-3xl py-3 xl:py-8 md:w-[587px] 2xl:w-[787px]">Priya, a 12th-grade graduate, secured a Sales Associate job at a local retail chain via Kaabil. She’s now thriving and plans to pursue further studies in</p>
-                        <div className="flex gap-4 xl:gap-6 2xl:gap-8">
-                            <Image
-                                src={"/assets/icons/profile.png"}
-                                width={80}
-                                height={73}
-                                alt="company logo"
-                                className="hidden sm:block"
-                            />
-                            <div className="block">
-                                <p className="text-[#E41C3B] text-base xl:text-lg 2xl:text-2xl">Priya Sharma</p>
-                                <p className="text-[#787878] text-base xl:text-lg 2xl:text-2xl">Retail Associates</p>
-                                <p className="text-[#787878] text-base xl:text-lg 2xl:text-2xl">Kota, Rajasthan</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="block bg-[#FFEDCE] p-6 rounded-3xl min-w-[80%] xl:min-w-[675px] md:p-8 xl:p-10 2xl:p-12">
-                        <Image
-                            src={"/assets/icons/qoutes.png"}
-                            width={100}
-                            height={100}
-                            alt="company logo"
-                            className="hidden sm:block"
-                        />
-                        <p className="text-lg xl:text-2xl 2xl:text-3xl py-3 xl:py-8 md:w-[587px] 2xl:w-[787px]">Priya, a 12th-grade graduate, secured a Sales Associate job at a local retail chain via Kaabil. She’s now thriving and plans to pursue further studies in</p>
-                        <div className="flex gap-4 xl:gap-6 2xl:gap-8">
-                            <Image
-                                src={"/assets/icons/profile.png"}
-                                width={80}
-                                height={73}
-                                alt="company logo"
-                                className="hidden sm:block"
-                            />
-                            <div className="block">
-                                <p className="text-[#E41C3B] text-base xl:text-lg 2xl:text-2xl">Priya Sharma</p>
-                                <p className="text-[#787878] text-base xl:text-lg 2xl:text-2xl">Retail Associates</p>
-                                <p className="text-[#787878] text-base xl:text-lg 2xl:text-2xl">Kota, Rajasthan</p>
-                            </div>
-                        </div>
-                    </div>
+                    <SuccessStorySlider/>
                 </div>
                 <div className="flex container">
                     <div className="block max-w-[380px]">
@@ -325,7 +273,7 @@ export default function Home() {
             </section>
             <PlayStoreAppAd />
             <section className="container pb-28 2xl:pb-40 lg:px-8">
-                <h3 className="text-2xl md:text-3xl xl:text-4xl 2xl:text-[55px] font-bold max-w-[745px] mb-5 md:mb-8 xl:mb-14 2xl:mb-16">To empower <span className="text-[#E41C3B]">1 Million Women</span> through Skilling and Livelihood Opportunities</h3>
+                <h3 className="text-center text-2xl md:text-3xl xl:text-4xl 2xl:text-[55px] font-bold max-w-[745px] mb-5 md:mb-8 xl:mb-14 2xl:mb-16">To empower <span className="text-[#E41C3B]">1 Million Women</span> through Skilling and Livelihood Opportunities</h3>
                 <div className="flex flex-col gap-2 md:gap-3 xl:gap-4">
                     <div className="flex justify-center gap-2 md:gap-3 xl:gap-4">
                         <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">

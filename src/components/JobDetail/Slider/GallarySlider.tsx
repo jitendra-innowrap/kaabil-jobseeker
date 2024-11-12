@@ -5,11 +5,10 @@ import { Swiper as SwiperType, SwiperOptions } from 'swiper/types';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
-import Image from 'next/image';
-import { Autoplay, Navigation } from 'swiper/modules';
+import { Autoplay, Navigation, FreeMode } from 'swiper/modules';
 
 interface GallerySliderProps extends SwiperOptions {
-  slides: Array<React.ReactNode>; // Array of slide components
+  slides: Array<any>; // Accept any type to handle custom slide components
   autoplayDuration?: number; // Autoplay duration in ms
   loop?: boolean; // Enable or disable looping
   autoplay?: boolean; // Enable or disable autoplay
@@ -17,23 +16,26 @@ interface GallerySliderProps extends SwiperOptions {
   customArrowRight?: React.ReactNode; // Custom right arrow component
   showNavigation?: boolean; // Show or hide navigation arrows
   onHoverPause?: boolean; // Pause on hover
-  reverse?: boolean
+  reverse?: boolean; // Reverse autoplay direction
+  freeMode?: boolean; // Enable free mode
+  slideComponent?: React.ComponentType<any>; // Custom slide component
 }
 
 const GallerySlider: React.FC<GallerySliderProps> = ({
   slides,
-  autoplayDuration = 0,
+  autoplayDuration = 2000,
   loop = true,
   autoplay = true,
   customArrowLeft,
   customArrowRight,
   showNavigation = false,
-  freeMode= false,
+  freeMode = false,
   speed = 4000,
   spaceBetween = 25,
   slidesPerView = 'auto',
-  reverse= false,
+  reverse = false,
   onHoverPause = false,
+  slideComponent: SlideComponent = null,
   ...restProps
 }) => {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -42,16 +44,16 @@ const GallerySlider: React.FC<GallerySliderProps> = ({
   const autoplayConfig = autoplay
     ? {
         delay: autoplayDuration,
-        disableOnInteraction: true,
+        disableOnInteraction: false,
         pauseOnMouseEnter: onHoverPause,
         reverseDirection: reverse,
       }
     : false;
-
+  console.log('slider', slides)
   return (
     <div className="relative">
       <Swiper
-        modules={[Autoplay, Navigation]}
+        modules={[Autoplay, Navigation, FreeMode]}
         loop={loop}
         autoplay={autoplayConfig}
         spaceBetween={spaceBetween}
@@ -59,15 +61,23 @@ const GallerySlider: React.FC<GallerySliderProps> = ({
         freeMode={freeMode}
         speed={speed}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
-        navigation={showNavigation ? {
-          prevEl: '.swiper-button-prev',
-          nextEl: '.swiper-button-next',
-        } : undefined}
+        navigation={
+          showNavigation
+            ? {
+                prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-button-next',
+              }
+            : undefined
+        }
         {...restProps}
       >
         {slides.map((slide, index) => (
-          <SwiperSlide key={index} style={{ width: '320px' }}>
-            {slide}
+          <SwiperSlide key={slide} style={{width:'fit-content'}}>
+            {SlideComponent ? (
+              <SlideComponent {...slide} />
+            ) : (
+              slide
+            )}
           </SwiperSlide>
         ))}
       </Swiper>
