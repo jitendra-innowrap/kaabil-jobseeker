@@ -3,10 +3,54 @@ import Image from 'next/image'
 import React from 'react'
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
 import 'swiper/css';
-import GallarySlider from './Slider/GallarySlider';
+import GallerySlider from './Slider/GallarySlider';
 
 export default function CompanyAboutSection() {
-
+    const slides = [
+        <Image
+          className="cursor-pointer"
+          src="/assets/sliders/company-1.png"
+          width={320}
+          height={260}
+          alt="company culture"
+        />,
+        <Image
+          className="cursor-pointer"
+          src="/assets/sliders/company-2.png"
+          width={320}
+          height={260}
+          alt="company culture"
+        />,
+        <Image
+          className="cursor-pointer"
+          src="/assets/sliders/company-3.png"
+          width={320}
+          height={260}
+          alt="company culture"
+        />,
+        <Image
+          className="cursor-pointer"
+          src="/assets/sliders/company-4.png"
+          width={320}
+          height={260}
+          alt="company culture"
+        />,
+        <Image
+          className="cursor-pointer"
+          src="/assets/sliders/company-1.png"
+          width={320}
+          height={260}
+          alt="company culture"
+        />,
+        <Image
+          className="cursor-pointer"
+          src="/assets/sliders/company-2.png"
+          width={320}
+          height={260}
+          alt="company culture"
+        />,
+      ];
+    
   return (
     <div className='bg-[#2C2C2C] container py-8 md:py-16'>
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-16">
@@ -46,7 +90,13 @@ export default function CompanyAboutSection() {
             </div>
         </div>
         <div className="block mt-8 lg:mt-12">
-            <GallarySlider />
+            <GallerySlider
+            slides={slides}
+            freeMode={false}
+            autoplayDuration={2000}
+            speed={2000}
+            spaceBetween={25}
+            />
         </div>
     </div>
   )
