@@ -1,6 +1,5 @@
 'use client'
 import React, { useState } from 'react'
-import { BiFilterAlt, BiSolidFilterAlt } from 'react-icons/bi'
 import LoadMoreAccordian from './LoadMoreAccordian'
 import { VscListFilter } from 'react-icons/vsc'
 import { HiOutlineFilter } from 'react-icons/hi'

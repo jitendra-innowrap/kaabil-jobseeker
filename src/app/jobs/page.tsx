@@ -1,17 +1,9 @@
 import PlayStoreAppAd from "@/components/Banners/PlaystoreAppAd";
 import Breadcrumb from "@/components/Breadcrumb";
 import FilterSidebar from "@/components/Filter";
-import LoadMoreAccordian from "@/components/Filter/LoadMoreAccordian";
 import JobList from "@/components/JobList";
 import SearchSection from "@/components/SearchSection";
 import Image from "next/image";
-import { BiFilterAlt } from "react-icons/bi";
-import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-import { FiCamera } from "react-icons/fi";
-import { HiOutlineCurrencyRupee, HiOutlineFilter } from "react-icons/hi";
-import { MdAccessTime } from "react-icons/md";
-import { TbFilter } from "react-icons/tb";
-import { TiFilter } from "react-icons/ti";
 
 export default function Home() {
 

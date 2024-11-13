@@ -71,7 +71,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({
         }
         {...restProps}
       >
-        {slides.map((slide, index) => (
+        {slides.map((slide) => (
           <SwiperSlide key={slide} style={{width:'fit-content'}}>
             {SlideComponent ? (
               <SlideComponent {...slide} />

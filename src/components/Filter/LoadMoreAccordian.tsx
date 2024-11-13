@@ -5,7 +5,6 @@ import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from 'react-
 import { BiChevronDown, BiChevronUp, BiSearch } from 'react-icons/bi';
 import Radio from './Radio';
 import Check from './Check';
-import { handleCommaForQuery } from '@/components/utils';
 
 // Define the types for the props
 interface LoadMoreAccordionProps {
@@ -20,13 +19,9 @@ interface LoadMoreAccordionProps {
 }
 
 export default function LoadMoreAccordion({ 
-    fetchMoreItems, 
     header,
-    fetch,
     isSearchable = false, 
     isRadio = false, 
-    initialList = [], 
-    itemsPerPage = 5,
     list
 }: LoadMoreAccordionProps) {
     const [selected, setSelected] = useState<String>()    
