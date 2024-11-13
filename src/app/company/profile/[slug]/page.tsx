@@ -6,8 +6,53 @@ import { HiOutlineCurrencyRupee } from "react-icons/hi";
 import { MdAccessTime } from "react-icons/md";
 import GallarySlider from '@/components/JobDetail/Slider/GallarySlider';
 import PlayStoreAppAd from "@/components/Banners/PlaystoreAppAd";
+import GallerySlider from "@/components/JobDetail/Slider/GallarySlider";
 
 export default function Home() {
+  const slides = [
+    <Image
+      className="cursor-pointer"
+      src="/assets/sliders/company-1.png"
+      width={320}
+      height={260}
+      alt="company culture"
+    />,
+    <Image
+      className="cursor-pointer"
+      src="/assets/sliders/company-2.png"
+      width={320}
+      height={260}
+      alt="company culture"
+    />,
+    <Image
+      className="cursor-pointer"
+      src="/assets/sliders/company-3.png"
+      width={320}
+      height={260}
+      alt="company culture"
+    />,
+    <Image
+      className="cursor-pointer"
+      src="/assets/sliders/company-4.png"
+      width={320}
+      height={260}
+      alt="company culture"
+    />,
+    <Image
+      className="cursor-pointer"
+      src="/assets/sliders/company-1.png"
+      width={320}
+      height={260}
+      alt="company culture"
+    />,
+    <Image
+      className="cursor-pointer"
+      src="/assets/sliders/company-2.png"
+      width={320}
+      height={260}
+      alt="company culture"
+    />,
+  ];
   return (
     <article>
       <section className='container'>
@@ -165,7 +210,7 @@ export default function Home() {
           </div>
           <div className="block">
             <strong className="block font-bold text-2xl py-5 md:py-6">
-              Explore Jobs from Swiggy
+              Latest Jobs from Swiggy
             </strong>
             <div className="flex mt-4 mb-8 gap-4 md:gap-7 lg:flex-col overflow-auto custom-scrollbar">
               {["","",""].map(()=>(
@@ -206,7 +251,13 @@ export default function Home() {
       </section>
       <section className="container">
         <h2 className="text-2xl md:text-3xl xl:text-4xl 2xltext-[40px] mb-3 leading-normal font-bold my-5 md:my-7 xl:my-9 2xl:my-10">Life at Swiggy</h2>
-        <GallarySlider/>
+        <GallerySlider
+            slides={slides}
+            freeMode={false}
+            autoplayDuration={2000}
+            speed={2000}
+            spaceBetween={25}
+            />
       </section>
       <section className="container">
         <strong className="text-2xl md:text-3xl xl:text-4xl 2xltext-[40px] font-bold block mt-10 lg:mt-20 mb-5 lg:mb-8">Explore Similar Jobs from Other Companies</strong>

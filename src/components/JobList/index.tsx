@@ -5,6 +5,7 @@ import { FiCamera } from 'react-icons/fi'
 import { HiOutlineCurrencyRupee, HiOutlineFilter } from 'react-icons/hi'
 import { MdAccessTime } from 'react-icons/md'
 import Pagination from '../Pagination'
+import Link from 'next/link'
 
 export default function JobList() {
     const [currentPage, setCurrentPage] = useState(1);
@@ -68,9 +69,9 @@ export default function JobList() {
                       <button className="font-bold text-xs md:text-sm py-2 mt-5 px-5 border-black border rounded-[20px]">
                         Save
                       </button>
-                      <button className="font-bold text-xs text-white bg-[#E41C3B] md:text-sm py-2 mt-5 px-5 border-[#E41C3B] border rounded-[20px]">
+                      <Link href={'/jobs/detail/store-floor-manager-noida'} className="font-bold text-xs text-white bg-[#E41C3B] md:text-sm py-2 mt-5 px-5 border-[#E41C3B] border rounded-[20px]">
                         Apply Now
-                      </button>
+                      </Link>
                     </div>
                 </div>
               </div>
@@ -108,9 +109,9 @@ export default function JobList() {
                       <button className="font-bold text-xs md:text-sm py-2 mt-5 px-5 border-black border rounded-[20px]">
                         Save
                       </button>
-                      <button className="font-bold text-xs text-white bg-[#E41C3B] md:text-sm py-2 mt-5 px-5 border-[#E41C3B] border rounded-[20px]">
+                      <Link href={'/jobs/detail/store-floor-manager-noida'} className="font-bold text-xs text-white bg-[#E41C3B] md:text-sm py-2 mt-5 px-5 border-[#E41C3B] border rounded-[20px]">
                         Apply Now
-                      </button>
+                      </Link>
                     </div>
                 </div>
               </div>
@@ -180,9 +181,9 @@ export default function JobList() {
                       <button className="font-bold text-xs md:text-sm py-2 mt-5 px-5 border-black border rounded-[20px]">
                         Save
                       </button>
-                      <button className="font-bold text-xs text-white bg-[#E41C3B] md:text-sm py-2 mt-5 px-5 border-[#E41C3B] border rounded-[20px]">
+                      <Link href={'/jobs/detail/store-floor-manager-noida'} className="font-bold text-xs text-white bg-[#E41C3B] md:text-sm py-2 mt-5 px-5 border-[#E41C3B] border rounded-[20px]">
                         Apply Now
-                      </button>
+                      </Link>
                     </div>
                 </div>
               </div>
@@ -227,9 +228,9 @@ export default function JobList() {
                       <button className="font-bold text-xs md:text-sm py-2 mt-5 px-5 border-black border rounded-[20px]">
                         Save
                       </button>
-                      <button className="font-bold text-xs text-white bg-[#E41C3B] md:text-sm py-2 mt-5 px-5 border-[#E41C3B] border rounded-[20px]">
+                      <Link href={'/jobs/detail/store-floor-manager-noida'} className="font-bold text-xs text-white bg-[#E41C3B] md:text-sm py-2 mt-5 px-5 border-[#E41C3B] border rounded-[20px]">
                         Apply Now
-                      </button>
+                      </Link>
                     </div>
                 </div>
               </div>
@@ -267,9 +268,9 @@ export default function JobList() {
                       <button className="font-bold text-xs md:text-sm py-2 mt-5 px-5 border-black border rounded-[20px]">
                         Save
                       </button>
-                      <button className="font-bold text-xs text-white bg-[#E41C3B] md:text-sm py-2 mt-5 px-5 border-[#E41C3B] border rounded-[20px]">
+                      <Link href={'/jobs/detail/store-floor-manager-noida'} className="font-bold text-xs text-white bg-[#E41C3B] md:text-sm py-2 mt-5 px-5 border-[#E41C3B] border rounded-[20px]">
                         Apply Now
-                      </button>
+                      </Link>
                     </div>
                 </div>
               </div>

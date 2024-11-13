@@ -12,12 +12,13 @@ import Resources from "@/components/Resorces";
 import CompanyLogosSlider from "@/components/JobDetail/Slider/CompanyLogosSlider";
 import SuccessStorySlider from "@/components/JobDetail/Slider/SuccessStorySlider";
 import Link from "next/link";
+import JobCard from "@/components/Common/JobCard";
 export default function Home() {
     return (
         <article>
             <section className=' '>
                 <div className='container mb-5 xl:mb-6'>
-                    <div className="flex flex-col sm:flex-row justify-between">
+                    <div className="flex flex-col gap-5 sm:flex-row justify-between">
                         <div className="flex flex-col mb-8 mt-10 md:mt-14 2xl:mt-20 xl:max-w-[570px] 2xl:max-w-[770px]">
                             <p className="text-primary font-medium text-lg xl:text-xl 2xl:text-2xl">Transforming 1M Women's Lives</p>
                             <h1 className='my-6 text-2xl md:text-3xl xl:text-7xl 2xl:text-8xl  font-bold'>Women's Career Network</h1>
@@ -29,12 +30,12 @@ export default function Home() {
                                 <button className='py-2 px-4 xl:px-6 text-xs md:text-lg xl:text-xl font-bold rounded-3xl border-[1px] text-white border-[#E41C3B] bg-[#E41C3B]'>Take Kaabil Pledge</button>
                             </div>
                         </div>
-                        <div className="block">
+                        <div className="block xl:w-1/2 sm:mb-8 sm:mt-10">
                             <Image
-                                src={"/assets/banners/job-banner.png"}
+                                src={"/assets/banners/home-banner.png"}
                                 width={280}
                                 height={350}
-                                className='w-[280px] xl:w-[350px] !h-auto'
+                                className='w-[280px] mx-auto sm:m-0 xl:w-full !h-auto'
                                 alt='Jobs for Women'
                             />
                         </div>
@@ -48,19 +49,19 @@ export default function Home() {
                     </div>
                     <div className="grid grid-cols-2 gap-14 lg:grid-cols-4 container my-5 md:my-8 xl:my-14 2xl:my-16">
                         <div className="grid place-items-center">
-                            <strong className="font-bold text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl">500+</strong>
+                            <strong className="font-extrabold text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl">500+</strong>
                             <p className="text-lg xl:text-2xl 2xl:text-3xl font-normal">Companies</p>
                         </div>
                         <div className="grid place-items-center">
-                            <strong className="font-bold text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl">50k+</strong>
+                            <strong className="font-extrabold text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl">50k+</strong>
                             <p className="text-lg xl:text-2xl 2xl:text-3xl font-normal">Jobs Posted</p>
                         </div>
                         <div className="grid place-items-center">
-                            <strong className="font-bold text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl">1.6M+</strong>
+                            <strong className="font-extrabold text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl">1.6M+</strong>
                             <p className="text-lg xl:text-2xl 2xl:text-3xl font-normal">Women Registered</p>
                         </div>
                         <div className="grid place-items-center">
-                            <strong className="font-bold text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl">5M+</strong>
+                            <strong className="font-extrabold text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl">5M+</strong>
                             <p className="text-lg xl:text-2xl 2xl:text-3xl font-normal">View on Job Posts</p>
                         </div>
                     </div>
@@ -68,7 +69,7 @@ export default function Home() {
             </section>
 
             <section className="border-t-black border-b-black border-b border-t py-5 md:py-8 xl:py-14 2xl:py-16">
-                <h3 className="text-2xl md:text-3xl xl:text-4xl 2xl:text-[55px] font-bold container">Explore Jobs in Top Industries</h3>
+                <h3 className="text-2xl md:text-3xl xl:text-4xl 2xl:text-[55px] font-extrabold container">Explore Jobs in Top Industries</h3>
                 <div className="w-full my-5 md:my-8 xl:my-14 2xl:my-16 max-w-[1440px] mx-auto">
                     <div className="flex flex-col gap-4 md:gap-5 xl:gap-7">
                         <InfiniteSlider reverse={true} />
@@ -77,7 +78,7 @@ export default function Home() {
                 </div>
             </section>
             <section className="border-t-black border-b-black border-b border-t py-5 md:py-8 xl:py-14 2xl:py-16">
-                <h3 className="text-2xl md:text-3xl xl:text-4xl 2xl:text-[55px] font-bold container">Top Companies for Women's Career Development</h3>
+                <h3 className="text-2xl md:text-3xl xl:text-4xl 2xl:text-[55px] font-extrabold container">Top Companies for Women's Career Development</h3>
                 <div className="w-full my-5 md:my-8 xl:my-14 2xl:my-16 max-w-[1440px] mx-auto">
                     <CompanyLogosSlider />
                 </div>
@@ -89,7 +90,7 @@ export default function Home() {
             </section>
             <section className="border-t-black border-b-black border-b border-t py-5 md:py-8 xl:py-14 2xl:py-16">
                 <div className="container">
-                    <h3 className="text-2xl md:text-3xl xl:text-4xl 2xl:text-[55px] font-bold max-w-[745px]">Build Your Career with the Right Tools and Guidance`</h3>
+                    <h3 className="text-2xl md:text-3xl xl:text-4xl 2xl:text-[55px] font-extrabold max-w-[745px]">Build Your Career with the Right Tools and Guidance`</h3>
                     <div className="w-full flex flex-col md:flex-row gap-5 md:gap-7 xl:gap-9 2xl:gap-10 overflow-auto my-5 md:my-8 xl:my-14 2xl:my-16">
                         <div className="flex flex-col justify-between mx-auto sm:w-[439px] md:w-[339px] xl:w-[409px] min-h-full">
                             <div className="block">
@@ -157,46 +158,7 @@ export default function Home() {
                     <div className="block w-full">
                         <div className="flex flex-col gap-4 md:gap-6">
                             {["", "", ""].map(() => (
-                                <div className="border sm:flex w-full max-w-[920px] border-[#A7A7A7] rounded-[20px] justify-between px-3 sm:px-8 py-3 sm:py-7">
-                                    <div className="block">
-                                        <Image
-                                            src={"/assets/logos/caratlane.png"}
-                                            width={64}
-                                            height={58.4}
-                                            alt="company logo"
-                                            className="block sm:hidden mb-2"
-                                        />
-                                        <strong className="font-bold text-lg md:text-xl mb-2 block">Store Floor Manager | Noida</strong>
-                                        <p className="font-light text-base text-[#727272]">Posted by HR Services Limited</p>
-                                        <div className="flex flex-wrap gap-y-1 flex-row md:items-center mt-3 gap-x-1 md:gap-x-3 md:mt-3">
-                                            <span className='opacity-80 flex items-center gap-1 md:gap-2 text-xs md:text-[14px]'><MdAccessTime className='inline size-3 md:size-5' /> Full Time</span>
-                                            <span className='opacity-80 flex items-center gap-1 md:gap-2 text-xs md:text-[14px]'><FiCamera className='inline size-3 md:size-5' /> 2-5 years of experience</span>
-                                            <span className='opacity-80 flex items-center gap-1 md:gap-2 text-xs md:text-[14px]'><HiOutlineCurrencyRupee className='inline size-3 md:size-5' /> 3L-6 Lacs PA</span>
-                                        </div>
-                                        <div className="flex mt-4 flex-wrap opacity-80 gap-2 text-xs md:text-[14px]">
-                                            <span>Store Manager</span>
-                                            <span>Luxury Sales</span>
-                                            <span>Sales Operation</span>
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col items-end">
-                                        <Image
-                                            src={"/assets/logos/caratlane.png"}
-                                            width={80}
-                                            height={73}
-                                            alt="company logo"
-                                            className="hidden sm:block"
-                                        />
-                                        <div className="flex gap-2 md:gap-3">
-                                            <button className="font-bold text-xs md:text-sm py-2 mt-5 px-5 border-black border rounded-[20px]">
-                                                Save
-                                            </button>
-                                            <button className="font-bold text-xs text-white bg-[#E41C3B] md:text-sm py-2 mt-5 px-5 border-[#E41C3B] border rounded-[20px]">
-                                                Apply Now
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
+                                <JobCard/>
                             ))
                             }
                         </div>
@@ -207,12 +169,12 @@ export default function Home() {
             <section className="bg-[#FCCB76] py-5 md:py-8 xl:py-14 2xl:py-16">
                 <h3 className="container text-2xl md:text-3xl xl:text-4xl 2xl:text-[55px] font-bold ">Success Stories</h3>
                 <p className="container text-lg py-5 xl:py-6 md:text-xl xl:text-2xl 2xl:text-[26px] font-normal">Read inspiring stories of women who found success through <span className="font-bold text-[#E41C3B]">Kaabil</span>.</p>
-                <div className="container-left flex py-3 xl:py-8 overflow-auto gap-5 xl:gap-8 2xl:gap-10">
+                <div className="container-left py-3 xl:py-8 ">
                     <SuccessStorySlider/>
                 </div>
-                <div className="flex container">
+                <div className="flex container justify-end">
                     <div className="block max-w-[380px]">
-                        <button className="font-bold text-base xl:text-lg 2xl:text-xl px-4 py-2 xl:px-7 2xl:px-8 xl:py-3 border-none rounded-full text-white bg-[#E41C3B]">Find Jobs</button>
+                        <button className="font-bold text-base xl:text-lg 2xl:text-xl px-4 py-2 xl:px-7 2xl:px-8 xl:py-3 border-none rounded-full text-white bg-[#E41C3B]">Read More</button>
                     </div>
                 </div>
             </section>
@@ -273,10 +235,10 @@ export default function Home() {
             </section>
             <PlayStoreAppAd />
             <section className="container pb-28 2xl:pb-40 lg:px-8">
-                <h3 className="text-center text-2xl md:text-3xl xl:text-4xl 2xl:text-[55px] font-bold max-w-[745px] mb-5 md:mb-8 xl:mb-14 2xl:mb-16">To empower <span className="text-[#E41C3B]">1 Million Women</span> through Skilling and Livelihood Opportunities</h3>
+                <h3 className="text-center mx-auto text-2xl md:text-3xl xl:text-4xl 2xl:text-6xl font-bold max-w-[745px] 2xl:max-w-[1020px] mb-5 md:mb-8 xl:mb-14 2xl:mb-16">To empower <span className="text-[#E41C3B]">1 Million Women</span> through Skilling and Livelihood Opportunities</h3>
                 <div className="flex flex-col gap-2 md:gap-3 xl:gap-4">
                     <div className="flex justify-center gap-2 md:gap-3 xl:gap-4">
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill
@@ -284,7 +246,7 @@ export default function Home() {
                                 alt="icons"
                                 />
                         </div>
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill
@@ -292,7 +254,7 @@ export default function Home() {
                                 alt="icons"
                                 />
                         </div>
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill
@@ -300,7 +262,7 @@ export default function Home() {
                                 alt="icons"
                                 />
                         </div>
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill
@@ -308,7 +270,7 @@ export default function Home() {
                                 alt="icons"
                                 />
                         </div>
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill
@@ -316,7 +278,7 @@ export default function Home() {
                                 alt="icons"
                                 />
                         </div>
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill
@@ -324,7 +286,7 @@ export default function Home() {
                                 alt="icons"
                                 />
                         </div>
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill
@@ -334,7 +296,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="flex justify-end gap-2 md:gap-3 xl:gap-4">
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill
@@ -342,7 +304,7 @@ export default function Home() {
                                 alt="icons"
                                 />
                         </div>
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill
@@ -350,7 +312,7 @@ export default function Home() {
                                 alt="icons"
                                 />
                         </div>
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill
@@ -358,7 +320,7 @@ export default function Home() {
                                 alt="icons"
                                 />
                         </div>
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill
@@ -366,7 +328,7 @@ export default function Home() {
                                 alt="icons"
                                 />
                         </div>
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill
@@ -374,7 +336,7 @@ export default function Home() {
                                 alt="icons"
                                 />
                         </div>
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill
@@ -382,7 +344,7 @@ export default function Home() {
                                 alt="icons"
                                 />
                         </div>
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill
@@ -392,7 +354,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="flex justify-start gap-2 md:gap-3 xl:gap-4">
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill
@@ -400,7 +362,7 @@ export default function Home() {
                                 alt="icons"
                                 />
                         </div>
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill
@@ -408,7 +370,7 @@ export default function Home() {
                                 alt="icons"
                                 />
                         </div>
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill
@@ -416,7 +378,7 @@ export default function Home() {
                                 alt="icons"
                                 />
                         </div>
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill
@@ -424,7 +386,7 @@ export default function Home() {
                                 alt="icons"
                                 />
                         </div>
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill
@@ -432,7 +394,7 @@ export default function Home() {
                                 alt="icons"
                                 />
                         </div>
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill
@@ -440,7 +402,7 @@ export default function Home() {
                                 alt="icons"
                                 />
                         </div>
-                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-24">
+                        <div className="rounded-full relative size-12 md:size-16 xl:size-20 2xl:size-28">
                             <Image
                                 src={"/assets/icons/profile.png"}
                                 fill

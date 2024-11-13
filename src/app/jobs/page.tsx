@@ -22,7 +22,7 @@ export default function Home() {
             <div className="flex flex-col mb-8 mt-10 md:mt-14 2xl:mt-20 xl:max-w-[570px] 2xl:max-w-[770px]">
                   <Breadcrumb root="Home" category="For Women" />
                 <div className="block">
-                    <h1 className='my-6 text-2xl md:text-3xl xl:text-7xl 2xl:text-8xl  font-bold'>Find a jobs that works for you</h1>
+                    <h1 className='my-6 text-2xl md:text-3xl xl:text-7xl 2xl:text-8xl  font-extrabold'>Find a jobs that works for you</h1>
                     <p className="mt-2 md:mt-5 max-w-[700px] text-lg xl:text-xl">
                         <span className='font-bold text-base'>Kaabil </span> is India's First Women's Growth Hub focusing on Women's Jobs, Skills, and Networking.
                     </p>

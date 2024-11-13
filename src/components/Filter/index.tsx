@@ -10,10 +10,12 @@ import PopularTags from './PopularTags'
 export default function FilterSidebar() {
     const [open, setOpen] = useState(false);
   return (
+    <>
+    {open && <div className="block bg-black opacity-20 w-screen h-screen fixed top-0 left-0" onClick={()=>setOpen(false)}></div>}
     <div className="flex relative flex-col w-full items-start lg:gap-7 xl:gap-10 2xl:gap-12">
         <h2 className="font-bold text-lg md:text-3xl 2xl:text-4xl hidden lg:block">All Filter</h2>
         <div className="flex">
-            <div className={`absolute lg:relative z-[100] ${!open ? '-left-full lg:left-0' : 'left-0'} transition-all -top-1 flex flex-col gap-2 xl:gap-4 duration-300 h-max w-[290px]`}>
+            <div className={`absolute rounded-3xl bg-white lg:relative z-[100] ${!open ? '-left-full lg:left-0' : 'left-0'} transition-all -top-1 flex flex-col gap-2 xl:gap-4 duration-300 h-max w-[290px]`}>
                 <LoadMoreAccordian 
                     header="Job Types"
                     list={[
@@ -22,7 +24,7 @@ export default function FilterSidebar() {
                         {id: '3', name: 'Freelance'},
                         {id: '4', name: 'Internship'}
                     ]} 
-                />
+                    />
 
                 <LoadMoreAccordian 
                     header="Experience" 
@@ -31,7 +33,7 @@ export default function FilterSidebar() {
                         {id: '2', name: 'Intermediate'},
                         {id: '3', name: 'Beginner'}
                     ]} 
-                />
+                    />
 
                 <LoadMoreAccordian 
                     header="Sectors" 
@@ -71,7 +73,7 @@ export default function FilterSidebar() {
                         {id: '11', name: 'Kolkata (12)'},
                         {id: '12', name: 'Hyderabad (22)'}
                     ]} 
-                />
+                    />
 
                 <LoadMoreAccordian 
                     header="Companies" 
@@ -84,7 +86,7 @@ export default function FilterSidebar() {
                         {id:'4', name:'FinTech Company A'},
                         {id:'5', name:'Telecom Company A'}
                     ]} 
-                />
+                    />
 
                 <LoadMoreAccordian 
                     header="Skills" 
@@ -97,7 +99,7 @@ export default function FilterSidebar() {
                         {id:'4', name:'Data Analysis'},
                         {id:'5', name:'Graphic Design'}
                     ]} 
-                />
+                    />
 
                 <LoadMoreAccordian 
                     header="Benefits" 
@@ -108,7 +110,7 @@ export default function FilterSidebar() {
                         {id:'4', name:'Remote Work Options'},
                         {id:'5', name:'Professional Development'}
                     ]} 
-                />
+                    />
 
                 <RangeAccordian/>
                 <PopularTags/>
@@ -123,5 +125,6 @@ export default function FilterSidebar() {
               </div>
               </div>
     </div>
+    </>
   )
 }

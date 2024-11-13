@@ -17,7 +17,7 @@ export default function SuccessStoryCard({
   location
 }: SuccessStoryCardProps) {
   return (
-    <div className="block bg-[#FFEDCE] p-6 rounded-3xl min-w-[80%] xl:min-w-[675px] md:p-8 xl:p-10 2xl:p-12">
+    <div className="block bg-[#FFEDCE] p-6 rounded-3xl min-w-[80%] min-h-full xl:min-w-[675px] md:p-8 xl:p-10 2xl:p-12">
       <Image
         src={"/assets/icons/qoutes.png"}
         width={100}

@@ -168,7 +168,7 @@ export default function Resources() {
     return (
         <div className="container-left flex flex-col lg:flex-row gap-5 xl:gap-10">
             <div className="block lg:w-[30%] lg:max-w-[280px]">
-                <ul className="flex lg:flex-col text-[#C8C9CB] overflow-auto font-bold text-lg md:text-xl xl:text-2xl 2xl:text-3xl gap-5">
+                <ul className="flex lg:flex-col text-[#C8C9CB] overflow-auto font-bold text-lg md:text-xl xl:text-3xl 2xl:text-4xl gap-5 xl:gap-7">
                     {categories.map(category => (
                         <li 
                             key={category.id} 
@@ -180,7 +180,7 @@ export default function Resources() {
                     ))}
                 </ul>
             </div>
-            <div className="w-full overflow-auto flex gap-5 md:gap-7 xl:gap-9 2xl:gap-10 mb-5 md:mb-8 xl:mb-14 2xl:mb-16">
+            <div className="w-full overflow-auto gap-5 md:gap-7 xl:gap-9 2xl:gap-10 mb-5 md:mb-8">
                 <div className="">
                     <GallerySlider
                     slides={resourcesData[selectedCategory]}
@@ -192,6 +192,11 @@ export default function Resources() {
                     spaceBetween={35}
                     slidesPerView={"auto"}
                     />
+                </div>
+                <div className="flex container justify-end mt-5 sm:mt-10">
+                    <div className="block max-w-[380px]">
+                        <button className="font-bold text-base xl:text-lg 2xl:text-xl px-4 py-2 xl:px-7 2xl:px-8 xl:py-3 border-none rounded-full text-[#fff] opacity-80">View all Insights</button>
+                    </div>
                 </div>
             </div>
         </div>

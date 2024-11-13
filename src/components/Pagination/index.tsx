@@ -22,7 +22,7 @@ const Pagination: React.FC<PaginationProps> = ({
                     {/* Previous Button */}
                     {currentPage > 1 && (
                         <li onClick={() => handleActive(currentPage - 1)} className="page-item">
-                            <button className="grid rounded-s-lg place-items-center size-5 w-6 md:size-8 md:w-9 border border-[#CFD6DC]">
+                            <button className="grid rounded-s-lg place-items-center size-7 w-6 md:size-8 md:w-9 border border-[#CFD6DC]">
                             <BsArrowLeft color="#4E5D78"/>
                             </button>
                         </li>
@@ -33,7 +33,7 @@ const Pagination: React.FC<PaginationProps> = ({
                         <li
                             onClick={() => handleActive(item)}
                             key={item} // Use item as key if it's unique
-                            className={currentPage === item ? "text-white grid place-items-center bg-[#E41C3B] rounded-full size-6 md:size-9" : " grid place-items-center border border-[#CFD6DC] size-5 md:size-8 text-[#4E5D78]"}
+                            className={currentPage === item ? "text-white grid place-items-center bg-[#E41C3B] rounded-full size-8 md:size-9" : " grid place-items-center border border-[#CFD6DC] size-7 md:size-8 text-[#4E5D78]"}
                         >
                             <button className="page-link">{item}</button>
                         </li>
@@ -42,7 +42,7 @@ const Pagination: React.FC<PaginationProps> = ({
                     {/* Next Button */}
                     {currentPage < pages && (
                         <li onClick={() => handleActive(currentPage + 1)} className="page-item">
-                            <button className="grid rounded-e-lg place-items-center size-5 w-6 md:size-8 md:w-9 border border-[#CFD6DC]">
+                            <button className="grid rounded-e-lg place-items-center size-7 w-6 md:size-8 md:w-9 border border-[#CFD6DC]">
                                 <BsArrowRight color="#4E5D78"/>
                             </button>
                         </li>
