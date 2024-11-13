@@ -9,7 +9,7 @@ import { formatSalary } from '../utils';
 
  function RangeAccordion() {
     const router = useRouter();
-    // const searchParams = useSearchParams();
+    const searchParams = useSearchParams();
 
     // Default salary range values
     const defaultMin = 5000;
@@ -19,26 +19,26 @@ import { formatSalary } from '../utils';
     const [value, setValue] = useState({ min: defaultMin, max: defaultMax });
 
     // Load initial salary range from URL if present
-    // useEffect(() => {
-    //     const minSalary = searchParams.get('minSalary');
-    //     const maxSalary = searchParams.get('maxSalary');
+    useEffect(() => {
+        const minSalary = searchParams.get('minSalary');
+        const maxSalary = searchParams.get('maxSalary');
         
-    //     if (minSalary && maxSalary) {
-    //         setValue({ min: Number(minSalary), max: Number(maxSalary) });
-    //     }
-    // }, [searchParams]);
+        if (minSalary && maxSalary) {
+            setValue({ min: Number(minSalary), max: Number(maxSalary) });
+        }
+    }, [searchParams]);
 
     // Update the URL parameters whenever the slider value changes
     const handleRangeChange = ([min, max]: number[]) => {
         setValue({ min, max });
 
         // Update the query parameters in the URL
-        // const params = new URLSearchParams(searchParams.toString());
-        // params.set('minSalary', min.toString());
-        // params.set('maxSalary', max.toString());
+        const params = new URLSearchParams(searchParams.toString());
+        params.set('minSalary', min.toString());
+        params.set('maxSalary', max.toString());
 
-        // // Use router to push new URL params without refreshing the page
-        // router.push(`?${params.toString()}`, { scroll: false });
+        // Use router to push new URL params without refreshing the page
+        router.push(`?${params.toString()}`, { scroll: false });
     };
 
     return (
