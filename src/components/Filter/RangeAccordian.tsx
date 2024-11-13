@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from 'react-headless-accordion';
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
@@ -7,9 +7,9 @@ import RangeSlider from 'react-range-slider-input';
 import 'react-range-slider-input/dist/style.css';
 import { formatSalary } from '../utils';
 
-export default function RangeAccordion() {
+ function RangeAccordion() {
     const router = useRouter();
-    const searchParams = useSearchParams();
+    // const searchParams = useSearchParams();
 
     // Default salary range values
     const defaultMin = 5000;
@@ -19,26 +19,26 @@ export default function RangeAccordion() {
     const [value, setValue] = useState({ min: defaultMin, max: defaultMax });
 
     // Load initial salary range from URL if present
-    useEffect(() => {
-        const minSalary = searchParams.get('minSalary');
-        const maxSalary = searchParams.get('maxSalary');
+    // useEffect(() => {
+    //     const minSalary = searchParams.get('minSalary');
+    //     const maxSalary = searchParams.get('maxSalary');
         
-        if (minSalary && maxSalary) {
-            setValue({ min: Number(minSalary), max: Number(maxSalary) });
-        }
-    }, [searchParams]);
+    //     if (minSalary && maxSalary) {
+    //         setValue({ min: Number(minSalary), max: Number(maxSalary) });
+    //     }
+    // }, [searchParams]);
 
     // Update the URL parameters whenever the slider value changes
     const handleRangeChange = ([min, max]: number[]) => {
         setValue({ min, max });
 
         // Update the query parameters in the URL
-        const params = new URLSearchParams(searchParams.toString());
-        params.set('minSalary', min.toString());
-        params.set('maxSalary', max.toString());
+        // const params = new URLSearchParams(searchParams.toString());
+        // params.set('minSalary', min.toString());
+        // params.set('maxSalary', max.toString());
 
-        // Use router to push new URL params without refreshing the page
-        router.push(`?${params.toString()}`, { scroll: false });
+        // // Use router to push new URL params without refreshing the page
+        // router.push(`?${params.toString()}`, { scroll: false });
     };
 
     return (
@@ -81,5 +81,14 @@ export default function RangeAccordion() {
                 )}
             </AccordionItem>
         </Accordion>
+    );
+}
+
+// Wrap the component with Suspense in your page or parent component where it's used
+export default function Page() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <RangeAccordion />
+        </Suspense>
     );
 }

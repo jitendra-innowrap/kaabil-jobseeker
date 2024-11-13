@@ -1,5 +1,5 @@
-'use client'
-import React, { useState, useEffect } from 'react';
+'use client';
+import React, { useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from 'react-headless-accordion';
 import { BiChevronDown, BiChevronUp, BiSearch } from 'react-icons/bi';
@@ -8,23 +8,20 @@ import Check from './Check';
 
 // Define the types for the props
 interface LoadMoreAccordionProps {
-    fetchMoreItems?: any // (itemsPerPage: number, pageNumber: number, fetch: any, search: string) => Promise<any>;
+    fetchMoreItems?: any; // Define a more specific type if possible
     header: string;
-    fetch?: any; // Define a more specific type if possible
     isSearchable?: boolean;
     isRadio?: boolean;
-    initialList?: Array<{ id: number; name: string }>;
-    itemsPerPage?: number;
-    list: Array<{ id: number|string; name: string }>;
+    list: Array<{ id: number | string; name: string }>;
 }
-
-export default function LoadMoreAccordion({ 
+function LoadMoreAccordion({ 
+    fetchMoreItems, 
     header,
     isSearchable = false, 
     isRadio = false, 
     list
 }: LoadMoreAccordionProps) {
-    const [selected, setSelected] = useState<String>()    
+    const [selected, setSelected] = useState<string>('');    
     const [search, setSearch] = useState("");
     const router = useRouter();
     const searchParams = useSearchParams();
@@ -35,10 +32,10 @@ export default function LoadMoreAccordion({
         if (urlFilters) {
             setSelected(urlFilters);
         }
-    }, [searchParams, header, setSelected]);
+    }, [searchParams, header]);
 
-    const handleCheck = (item: { id: number|string; name: string }) => {
-        const selectedArray = selected ? selected?.split('|') : [];
+    const handleCheck = (item: { id: number | string; name: string }) => {
+        const selectedArray = selected ? selected.split('|') : [];
         const itemName = item.name;
         const isSelected = selectedArray.includes(itemName);
 
@@ -49,7 +46,7 @@ export default function LoadMoreAccordion({
             updatedSelected = [...selectedArray, itemName];
         }
 
-        const newSelected = updatedSelected?.join('|');
+        const newSelected = updatedSelected.join('|');
         setSelected(newSelected);
 
         // Update the URL parameters
@@ -62,7 +59,7 @@ export default function LoadMoreAccordion({
         router.push(`?${params.toString()}`, { scroll: false });
     };
 
-    const handleRadio = (item: { id: number|string; name: string }) => {
+    const handleRadio = (item: { id: number | string; name: string }) => {
         const isSelected = selected === item.name;
         const newSelected = isSelected ? '' : item.name;
         setSelected(newSelected);
@@ -80,7 +77,7 @@ export default function LoadMoreAccordion({
     return (
         <Accordion className='border bg-white px-7 border-[#A7A7A7] rounded-[20px]' transition={{ duration: '300ms', timingFunction: 'cubic-bezier(0, 0, 0.2, 1)' }}>
             <AccordionItem isActive={true}>
-                {({ open }:any) => (
+                {({ open }: any) => (
                     <>
                         <AccordionHeader className="w-full flex justify-between items-center text-black py-4">
                             <span className="font-normal text-base">{header}</span>
@@ -106,7 +103,7 @@ export default function LoadMoreAccordion({
                                         </button>
                                     </div>
                                 </div>
-                            ):<></>}
+                            ) : null}
                             <ul className='mb-4 grid gap-4 max-h-[210px] overflow-y-auto custom-scrollbar'>
                                 {list.map((item) => (
                                     isRadio ? (
@@ -115,15 +112,36 @@ export default function LoadMoreAccordion({
                                         </li>
                                     ) : (
                                         <li key={item.id} onClick={() => handleCheck(item)}>
-                                            <Check item={item.name} checked={selected?.split('|').includes(item.name) || false} />
+                                            <Check item={item.name} checked={selected.split('|').includes(item.name)} />
                                         </li>
                                     )
                                 ))}
                             </ul>
+                            {fetchMoreItems && <button className='text-[#e41c3b] underline mb-5'>View all</button>}
                         </AccordionBody>
                     </>
                 )}
             </AccordionItem>
         </Accordion>
+    );
+}
+
+// Wrap the LoadMoreAccordion component with Suspense in your page or parent component where it's used
+export default function Page({fetchMoreItems, 
+    header,
+    isSearchable = false, 
+    isRadio = false, 
+    list
+}: LoadMoreAccordionProps) {
+    return (
+        <React.Suspense fallback={<div>Loading...</div>}>
+            <LoadMoreAccordion 
+                header={header}
+                fetchMoreItems={fetchMoreItems}
+                list={list} 
+                isSearchable={isSearchable} 
+                isRadio={isRadio} 
+            />
+        </React.Suspense>
     );
 }

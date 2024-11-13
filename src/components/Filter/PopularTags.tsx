@@ -1,10 +1,11 @@
-'use client'
+'use client';
 import React, { useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from 'react-headless-accordion';
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
+import { Suspense } from 'react';
 
-export default function PopularTags() {
+function PopularTags() {
     const router = useRouter();
     const searchParams = useSearchParams();
 
@@ -86,5 +87,14 @@ export default function PopularTags() {
                 )}
             </AccordionItem>
         </Accordion>
+    );
+}
+
+// Wrap the component with Suspense in your page or parent component where it's used
+export default function Page() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <PopularTags />
+        </Suspense>
     );
 }
