@@ -61,7 +61,7 @@ export default function CompanyAboutSection() {
             </div>
             <div className="block min-h-fit">
                 <div className="flex justify-end items-center h-[100px]">
-                    <div className="relative w-[208] h-[65px] 2xl:w-[260px] 2xl:h-[81px]">
+                    <div className="relative w-[208px] h-[65px] 2xl:w-[260px] 2xl:h-[81px]">
                         <Image
                             src={"/assets/banners/Swiggy-Symbol 1.png"}
                             fill

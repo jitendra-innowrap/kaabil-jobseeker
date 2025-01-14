@@ -61,7 +61,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col sm:flex-row justify-between gap-5">
             <div className="grid place-items-center  max-h-[200px] 2xl:max-h-[280px]  min-h-full md:w-[350px] 2xl:max-w-[380px]  border-[#AEA3A3] border-[1px] rounded-[20px] p-[15px] lg:p-[20px] 2xl:p-[25px]">
-                    <div className="relative w-[208] h-[65px] 2xl:w-[200px] 2xl:h-[81px]">
+                    <div className="relative w-[208px] h-[65px] 2xl:w-[200px] 2xl:h-[81px]">
                       <Image
                           src={"/assets/banners/Swiggy-Symbol 1.png"}
                           fill

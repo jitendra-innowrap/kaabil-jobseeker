@@ -42,7 +42,7 @@ export default function JobdetailBanner() {
             </div>
             <div className="block min-h-fit max-w-[280px] mx-auto md:mx-0 2xl:max-w-[380px]  border-[#AEA3A3] border-[1px] rounded-[20px] p-[15px] lg:p-[20px] 2xl:p-[25px]">
                 <div className="border-[#AEA3A3] h-[200px] border-b-[1px] grid place-items-center">
-                    <div className="relative w-[208] h-[65px] 2xl:w-[260px] 2xl:h-[81px]">
+                    <div className="relative w-[208px] h-[65px] 2xl:w-[260px] 2xl:h-[81px]">
                         <Image
                             src={"/assets/banners/Swiggy-Symbol 1.png"}
                             fill

@@ -186,7 +186,7 @@ export default function Home() {
                         <div className="block md:w-[350px] xl:w-[400px] 2xl:w-[440px]">
                             <div className="h-[200px] xl:h-[230px] grid place-items-center border-[#AEA3A3] border-[1px] rounded-[20px] p-[15px] lg:p-[20px] 2xl:p-[25px] mb-3 md:mb-10">
                                 <Link href='/company/profile/swiggy'>
-                                    <div className="relative w-[208] h-[65px] xl:w-[260px] xl:h-[81px] 2xl:w-[312px] 2xl:h-[97px]">
+                                    <div className="relative w-[208px] h-[65px] xl:w-[260px] xl:h-[81px] 2xl:w-[312px] 2xl:h-[97px]">
                                         <Image
                                             src={"/assets/banners/Swiggy-Symbol 1.png"}
                                             fill
