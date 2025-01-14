@@ -143,8 +143,8 @@ body {
 }
 @media (width>=1280){
   .seach-section .css-hlgwow, .seach-section input,.seach-section button{
-    padding-left: 2rem; 
-    padding-right: 2rem;
+    /* padding-left: 2rem; 
+    padding-right: 2rem; */
   }
 }
 
