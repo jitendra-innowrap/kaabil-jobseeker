@@ -38,8 +38,8 @@ export default function BurgerMenu() {
                     />
                 </div>
                 <div className="flex flex-col gap-4 px-6">
-                    <a href="http://job-exchange" target="_blank" className='px-6 py-2 font-bold text-white bg-[#E41C3B] rounded-3xl' rel="noopener noreferrer">Job Exchange</a>
-                    <a href="http://job-exchange" target="_blank" className='px-6 py-2 font-bold text-white bg-[#4D4D4F] rounded-3xl' rel="noopener noreferrer">Employer Portal</a>
+                    <a href="#" target="_blank" className='px-6 py-2 font-bold text-white bg-[#E41C3B] rounded-3xl' rel="noopener noreferrer">Job Exchange</a>
+                    <a href="#" target="_blank" className='px-6 py-2 font-bold text-white bg-[#4D4D4F] rounded-3xl' rel="noopener noreferrer">Employer Portal</a>
                 </div>
             </div>
             {isOpen && (

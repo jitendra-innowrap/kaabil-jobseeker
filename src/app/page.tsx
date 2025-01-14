@@ -185,14 +185,16 @@ export default function Home() {
                     <div className="flex flex-col gap-10 xl:gap-12 sm:flex-row justify-between mt-5 md:mt-8 xl:mt-14">
                         <div className="block md:w-[350px] xl:w-[400px] 2xl:w-[440px]">
                             <div className="h-[200px] xl:h-[230px] grid place-items-center border-[#AEA3A3] border-[1px] rounded-[20px] p-[15px] lg:p-[20px] 2xl:p-[25px] mb-3 md:mb-10">
-                                <div className="relative w-[208] h-[65px] xl:w-[260px] xl:h-[81px] 2xl:w-[312px] 2xl:h-[97px]">
-                                    <Image
-                                        src={"/assets/banners/Swiggy-Symbol 1.png"}
-                                        fill
-                                        className='absolute'
-                                        alt='Swiggy-Symbol'
-                                    />
-                                </div>
+                                <Link href='/company/profile/swiggy'>
+                                    <div className="relative w-[208] h-[65px] xl:w-[260px] xl:h-[81px] 2xl:w-[312px] 2xl:h-[97px]">
+                                        <Image
+                                            src={"/assets/banners/Swiggy-Symbol 1.png"}
+                                            fill
+                                            className='absolute'
+                                            alt='Swiggy-Symbol'
+                                        />
+                                    </div>
+                                </Link>
                             </div>
                             <div className="flex gap-3 items-end md:justify-end">
                                 <FaCheckCircle color="#5ABF8E" className="size-8 md:size-10 2xl:size-11" />

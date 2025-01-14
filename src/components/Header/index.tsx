@@ -24,8 +24,8 @@ export default function Header() {
                         <input type="text" className='outline-none focus:outline-none placeholder:text-[#959595] w-[260px] lg:w-[350px] text-lg md:text-base xl:text-lg' placeholder='Search Jobs, Companies & More' />
                     </div>
                     <div className="flex gap-1 xl:gap-4">
-                        <a href="http://job-exchange" target="_blank" className='px-3 xl:px-6 py-2 font-bold text-sm xl:text-base text-white bg-[#E41C3B] rounded-3xl' rel="noopener noreferrer">Job Exchange</a>
-                        <a href="http://job-exchange" target="_blank" className='px-3 xl:px-6 py-2 font-bold text-sm xl:text-base text-white bg-[#4D4D4F] rounded-3xl' rel="noopener noreferrer">Employer Portal</a>
+                        <a href="#" target="_blank" className='px-3 xl:px-6 py-2 font-bold text-sm xl:text-base text-white bg-[#E41C3B] rounded-3xl' rel="noopener noreferrer">Job Exchange</a>
+                        <a href="#" target="_blank" className='px-3 xl:px-6 py-2 font-bold text-sm xl:text-base text-white bg-[#4D4D4F] rounded-3xl' rel="noopener noreferrer">Employer Portal</a>
                     </div>
                 </div>
                 <div className="flex justify-between pl-8 pr-5 md:pr-10 2xl:pr-16 items-center">

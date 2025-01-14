@@ -60,17 +60,15 @@ export default function Home() {
           <Breadcrumb root="Home" category="For Women" subCategory="Employer" subcategory2="Swiggy" />
         </div>
         <div className="flex flex-col sm:flex-row justify-between gap-5">
-            <div className="block max-h-[200px] 2xl:max-h-[280px]  min-h-full md:w-[350px] 2xl:max-w-[380px]  border-[#AEA3A3] border-[1px] rounded-[20px] p-[15px] lg:p-[20px] 2xl:p-[25px]">
-                <div className="h-[200px] grid place-items-center">
-                    <div className="relative w-[208] h-[65px] 2xl:w-[260px] 2xl:h-[81px]">
-                        <Image
-                            src={"/assets/banners/Swiggy-Symbol 1.png"}
-                            fill
-                            className='absolute'
-                            alt='Swiggy-Symbol'
-                            />
+            <div className="grid place-items-center  max-h-[200px] 2xl:max-h-[280px]  min-h-full md:w-[350px] 2xl:max-w-[380px]  border-[#AEA3A3] border-[1px] rounded-[20px] p-[15px] lg:p-[20px] 2xl:p-[25px]">
+                    <div className="relative w-[208] h-[65px] 2xl:w-[200px] 2xl:h-[81px]">
+                      <Image
+                          src={"/assets/banners/Swiggy-Symbol 1.png"}
+                          fill
+                          className='absolute'
+                          alt='Swiggy-Symbol'
+                          />
                     </div>
-                </div>
             </div>
             <div className="block xl:max-w-[480px] pl-3 md:pl-8 xl:pl-10 2xl:pl-14 2xl:max-w-[540px]">
               <p className="text-base md:text-lg 2xl:text-xl mb-3 md:mb-5">Swiggy is an Indian online food ordering and delivery platform. Founded in 2014, Swiggy is headquartered in Bangalore and operates in more than 580 Indian cities, as of July 2023. Besides food delivery, the platform also provides on-demand grocery deliveries under the name Instamart, and a same-day package delivery service called Swiggy Genie.</p>
