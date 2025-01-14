@@ -125,6 +125,8 @@ body {
   border-radius: 9999px;
 }
 .seach-section .css-13cymwt-control, .seach-section .css-t3ipsp-control{
+  padding-left: 1.5rem; 
+  padding-right: 1.5rem;
   height: 52px !important;
   border-radius: 9999px;
 }
